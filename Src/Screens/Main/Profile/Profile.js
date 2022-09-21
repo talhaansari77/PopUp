@@ -34,7 +34,7 @@ const Profile = () => {
                 color={colors.white}
               />
             </PH10>
-            <CustomText label={"Profile"} color={colors.white} fontSize={20} />
+            <CustomText label={"Profile"} color={colors.white} fontSize={20}  />
             <Divider color={colors.white} />
           </Row>
         )}
@@ -59,7 +59,7 @@ const Profile = () => {
               <Spacer height={6} />
               <CustomText
                 label={"Manage Your Account"}
-                color={colors.blue}
+                color={colors.link}
                 fontSize={13}
               />
             </View>

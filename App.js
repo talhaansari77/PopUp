@@ -4,11 +4,18 @@ import RootNavigator from "./Src/Routes";
 
 import { Provider } from "redux";
 import { store } from "./Src/Redux/Store";
+import { useFonts } from "expo-font";
 
 LogBox.ignoreLogs(["VirtualizedLists", "Warning:..."]);
 LogBox.ignoreAllLogs();
 
 export default function App() {
+  const [loaded] = useFonts({
+    lovers: require("./Assets/Fonts/LoversQuarrel-Regular.ttf"),
+  });
+
+  if (!loaded) return <View />;
+
   return (
     //  <Provider store={store}>
     <RootNavigator />
