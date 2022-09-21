@@ -9,14 +9,15 @@ import styled from "react-native-styled-components";
 const TopBar = () => {
   return (
     // <SafeAreaView>
-    <Main style={{ backgroundColor: colors.primary, height: 90 }}>
+    <Main>
       <LeftTopBar>
-        <AntDesign name="left" color={colors.white} size={30} />
-        <Image source={icons.PopUp} size={30} />
+        <AntDesign name="left" color={colors.white} size={22} style={{marginTop: 13}} />
+        {/* <Image source={icons.PopUp} size={33} /> */}
+        <Text>Pop up Tv Remote</Text>
       </LeftTopBar>
-      <View>
+      <RightTopBar>
         <Feather name={"bell"} color={colors.white} size={30} />
-      </View>
+      </RightTopBar>
     </Main>
     // <View></View>
     // </SafeAreaView>
@@ -26,7 +27,8 @@ const TopBar = () => {
 const Main = styled(View,{
     display: 'flex',
     flexDirection: "row",
-    backgroundColor: colors.black,
+    backgroundColor: colors.primary,
+    height: 95,
     justifyContent: "space-between",
     padding: 20
 })
@@ -34,6 +36,12 @@ const Main = styled(View,{
 const LeftTopBar = styled(View, {
     display: 'flex',
     flexDirection: "row",
+    marginTop: 12,
+
+})
+
+const RightTopBar = styled(View , {
+    marginTop: 20
 })
 
 export default TopBar;
