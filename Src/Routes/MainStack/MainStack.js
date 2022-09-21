@@ -16,7 +16,9 @@ const MainStack = () => {
         headerShown: false,
         tabBarShowLabel: true,
         tabBarStyle: {
-          backgroundColor: "#fff",
+        backgroundColor: "#910C0D",
+        borderColor: "#910C0D",
+          // opacity: "0.9",
           height: verticalScale(70),
           paddingHorizontal: scale(30),
           // marginVertical: scale(30),
@@ -56,9 +58,9 @@ const MainStack = () => {
       // inactiveColor="#3e2465"
       // barStyle={{ padding:100 }}
       tabBarOptions={{
-        activeTintColor: colors.primary,
-        inactiveTintColor: "#000",
-        activeBackgroundColor: "#fff",
+        activeTintColor: "#fff",
+        inactiveTintColor: "#fff",
+        // activeBackgroundColor: "#fff",
         showIcon: true,
         
       }}
