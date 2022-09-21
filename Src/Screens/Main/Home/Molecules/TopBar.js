@@ -1,24 +1,40 @@
-import { View, Text, SafeAreaView, Image } from "react-native";
+import { View, Text, SafeAreaView, Image, Platform } from "react-native";
 import React from "react";
 import Feather from "react-native-vector-icons/Feather";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { colors } from "../../../../Utils/Colors";
 import icons from "../../../../../Assets/Icons";
 import styled from "react-native-styled-components";
+import CustomText from "../../../../Components/CustomText";
+import { Spacer } from "../../../../Components/Spacer";
+import { scale, verticalScale } from "react-native-size-matters";
 
 const TopBar = () => {
   return (
     // <SafeAreaView>
+    <>
     <Main>
+
       <LeftTopBar>
-        <AntDesign name="left" color={colors.white} size={22} style={{marginTop: 13}} />
-        {/* <Image source={icons.PopUp} size={33} /> */}
-        <Text>Pop up Tv Remote</Text>
+        <AntDesign name="left" color={colors.white} size={22} style={{marginTop: 30 }} />
+        {/* <Image source={icons.PopUp} size={33} /> */} 
+        
+        <View style={{alignItems: "center", marginTop: 10}}>
+        <CustomText label={"Pop up Tv"} fontFamily={"lovers"} fontSize={25} marginBottom={-9}  color={colors.white} />
+        <CustomText label={"Remote"}  fontFamily={"lovers"} fontSize={25} color={colors.white} />
+        {/* Remote */}
+        </View>
+        
       </LeftTopBar>
+
       <RightTopBar>
         <Feather name={"bell"} color={colors.white} size={30} />
+        <Feather name={"cast"} color={colors.white} size={30} />
+        <Feather name={"search"} color={colors.white} size={30} />
+        <Feather name={"grid"} color={colors.white} size={30} />
       </RightTopBar>
     </Main>
+    </>
     // <View></View>
     // </SafeAreaView>
   );
@@ -28,8 +44,9 @@ const Main = styled(View,{
     display: 'flex',
     flexDirection: "row",
     backgroundColor: colors.primary,
-    height: 95,
+    paddingVertical: Platform.OS == "android" ?  6 : 5,
     justifyContent: "space-between",
+    alignItems: "flex-end",
     padding: 20
 })
 
@@ -41,7 +58,13 @@ const LeftTopBar = styled(View, {
 })
 
 const RightTopBar = styled(View , {
-    marginTop: 20
+    // marginTop: 20,
+    display: 'flex',
+    flexDirection: "row",
+    width: "50%",
+    justifyContent: "space-between",
+    marginBottom: verticalScale(8),
+    alignItems: "flex-end"
 })
 
 export default TopBar;

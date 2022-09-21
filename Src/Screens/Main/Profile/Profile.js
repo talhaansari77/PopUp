@@ -23,7 +23,7 @@ const settingList = [
 const Profile = () => {
   return (
     <Container>
-      <Spacer height={20} />
+      <Spacer height={30} />
       <ProfileNav
         LeftSide={() => (
           <Row>
