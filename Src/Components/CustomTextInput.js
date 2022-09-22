@@ -12,9 +12,10 @@ import {
   ScaledSheet,
   verticalScale,
 } from "react-native-size-matters";
-import { colors } from "../utils/Colors";
+// import { colors } from "../utils/Colors";
 import CustomText from "./CustomText";
 import { Ionicons } from "@expo/vector-icons";
+import { colors } from "../Utils/Colors";
 const CustomTextInput = ({
   eyeClick,
   password,
@@ -32,7 +33,7 @@ const CustomTextInput = ({
           fontFamily="regular"
           fontSize={verticalScale(10)}
           // marginTop={marginTop}
-          marginBottom={verticalScale(10)}
+          // marginBottom={verticalScale(10)}
         />
       ) : null}
       <TouchableOpacity

@@ -11,6 +11,7 @@ import Home from "../../Screens/Main/Home";
 import CustomText from "../../Components/CustomText";
 import { View } from "react-native";
 import styled from "react-native-styled-components";
+import SearchScreen from "../../Screens/Main/SearchScreen/SearchScreen";
 const MainStack = () => {
   const Tab = createBottomTabNavigator();
   return (
