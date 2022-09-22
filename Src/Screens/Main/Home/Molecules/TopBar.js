@@ -46,12 +46,14 @@ const TopBar = () => {
         <RightTopBar>
           <Feather name={"bell"} color={colors.white} size={30} />
           <Feather name={"cast"} color={colors.white} size={30} />
-          <Feather name={"search"} color={colors.white} size={30} />
+          <Feather name={"search"} color={colors.white} size={30} 
+          onPress={() => navigation.navigate("SettingStack",{screen:'SearchScreen'})}
+          />
           <Feather
             name={"grid"}
             color={colors.white}
             size={30}
-            onPress={() => navigation.navigate("SettingStack")}
+            onPress={() => navigation.navigate("SettingStack",{screen: "GeneralSetting"})}
           />
         </RightTopBar>
       </Main>
