@@ -16,13 +16,15 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 
 // import { ActivityIndicator } from "react-native-paper";
-import { colors } from "../utils/Colors";
+import { colors } from "../Utils/Colors";
 function CustomGradientButton({
   loading,
   title,
   onPress,
   icon,
   color,
+  color1,
+  color2,
   width,
   height,
   borderColor,
@@ -33,6 +35,7 @@ function CustomGradientButton({
   borderWidth,
   backgroundColor,
   fontFamily,
+  fontWeight,
   marginBottom,
   marginHorizontal,
   opacity,
@@ -72,10 +75,10 @@ function CustomGradientButton({
         <ActivityIndicator color={colors.white} size={moderateScale(26)} />
       ) : (
         <View style={{ flexDirection: "row" }}>
-            <View style={{width: "90%",  justifyContent: 'center', alignSelf: "center"}}>
+            <View style={{width: width||"90%",  justifyContent: 'center', alignSelf: "center"}}>
             <LinearGradient 
-                colors={["#8E59E2", "#C9A9FD"]}
-                style={{height: "100%", alignItems:"center", borderRadius: borderRadius || 10, justifyContent: 'center'}}
+                colors={[color1, color2]}
+                style={{height: height||"100%", alignItems:"center", borderRadius: borderRadius || 10, justifyContent: 'center'}}
             >
           <Text
             style={[
@@ -84,6 +87,7 @@ function CustomGradientButton({
                 fontSize: fontSize || verticalScale(15),
                 fontFamily: fontFamily || "bold",
                 alignSelf: alignSelf|| "center",
+                fontWeight:fontWeight||"bold"
                 // marginTop: marginTop 
                 // textAlign: textAlign
               },

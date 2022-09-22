@@ -16,7 +16,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 
 // import { ActivityIndicator } from "react-native-paper";
-import { colors } from "../utils/Colors";
+import { colors } from "../Utils/Colors";
 function CustomButton({
   loading,
   title,
