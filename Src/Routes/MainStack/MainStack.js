@@ -11,8 +11,14 @@ import Home from "../../Screens/Main/Home";
 import CustomText from "../../Components/CustomText";
 import { View } from "react-native";
 import styled from "react-native-styled-components";
+
 import SearchScreen from "../../Screens/Main/SearchScreen/SearchScreen";
 import AddReminder from "../../Screens/Main/AddReminder/AddReminder";
+
+
+import ChannelScreen from "../../Screens/Main/ChannelScreen";
+
+
 const MainStack = () => {
   const Tab = createBottomTabNavigator();
   return (
@@ -74,7 +80,7 @@ const MainStack = () => {
         showIcon: true,
         
       }}
-      initialRouteName="Home"
+      initialRouteName="ChannelScreen"
     >
       {/* <AddReminder /> */}
       {/* <Tab.Screen name="AddReminder" component={AddReminder} /> */}
@@ -82,14 +88,16 @@ const MainStack = () => {
       <Tab.Screen name="Live" component={Live} />
       <Tab.Screen name="AddNew" component={Favorite} />
       <Tab.Screen name="Favorite" component={Favorite} />
-      <Tab.Screen name="Profile" component={Profile} />
-      {/* <Tab.Screen
-        name="EditProfile"
-        component={EditProfile}
+      <Tab.Screen name="Profile" component={Profile}
+      
+      />
+      <Tab.Screen
+        name="ChannelScreen"
+        component={ChannelScreen}
         options={{
           tabBarItemStyle: { display: "none" },
         }}
-      /> */}
+      />
     </Tab.Navigator>
   );
 };

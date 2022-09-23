@@ -5,6 +5,7 @@ import {
   FlatList,
   Dimensions,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import CustomText from "../../../../Components/CustomText";
@@ -13,6 +14,7 @@ import Channels from "../../../../../Assets/Channels";
 import styled from "react-native-styled-components";
 import { moderateScale, verticalScale } from "react-native-size-matters";
 import { Spacer } from "../../../../Components/Spacer";
+import { useNavigation } from "@react-navigation/native";
 
 const channelList = [
   { id: 1, name: Channels.AmazonPrime, label: "AmazonPrime" },
@@ -29,6 +31,7 @@ const FavChannelList = [
   { id: 3, name: Channels.Colors, label: "Colors" },
 ];
 const ChannelTv = () => {
+  const navigation = useNavigation();
   return (
     <ScrollView>
       <MainChannel>
@@ -53,7 +56,7 @@ const ChannelTv = () => {
 
         <Channel>
           {channelList.map((channel) => (
-            <ChannelContainer>
+            <ChannelContainer activeOpacity={0.7} onPress={()=>navigation.navigate("ChannelScreen")}>
               <ChannelImageCon>
                 <Image
                   source={channel.name}
@@ -85,7 +88,7 @@ const ChannelTv = () => {
         <ScrollView horizontal>
           {FavChannelList.map((channel) => (
             <>
-              <View>
+              <TouchableOpacity activeOpacity={0.7}>
                 <View style={w100}>
                   <Image source={channel.name} resizeMode={"contain"} />
                 </View>
@@ -96,7 +99,7 @@ const ChannelTv = () => {
                     color={colors.white}
                   />
                 </ChannelNameContainer>
-              </View>
+              </TouchableOpacity>
               <Spacer width={10} />
             </>
           ))}
@@ -130,7 +133,7 @@ const Channel = styled(View, {
   justifyContent: "space-between",
   // paddingRight: 20,
 });
-const ChannelContainer = styled(View, {
+const ChannelContainer = styled(TouchableOpacity, {
   width: Dimensions.get("window").width / 2.3,
   marginVertical: verticalScale(5),
 });

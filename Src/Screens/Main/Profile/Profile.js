@@ -6,7 +6,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import styled from "react-native-styled-components";
 import { colors } from "../../../Utils/Colors";
 import { scale, verticalScale } from "react-native-size-matters";
-import { Divider } from 'react-native-elements/dist/divider/Divider'
+import { Divider } from "react-native-elements/dist/divider/Divider";
 import { Spacer } from "../../../Components/Spacer";
 
 const settingList = [
@@ -34,13 +34,19 @@ const Profile = () => {
                 color={colors.white}
               />
             </PH10>
-            <CustomText label={"Profile"} color={colors.white} fontSize={20} fontFamily={'inter'} />
-            <Divider />
+            <CustomText
+              label={"Profile"}
+              color={colors.white}
+              fontSize={20}
+              fontFamily={"inter"}
+            />
           </Row>
         )}
       />
       {/* manage Accounts */}
-      <Spacer height={20} />
+      <Spacer height={10} />
+      <Line elevation={5}  />
+      <Spacer height={10} />
       <PV10>
         <PH10>
           <Row>
@@ -55,14 +61,19 @@ const Profile = () => {
             </ProfileImage>
             <Spacer width={18} />
             <View>
-              <CustomText label={"NAME"} color={colors.white} fontSize={20} fontFamily={'inter'}  />
+              <CustomText
+                label={"NAME"}
+                color={colors.white}
+                fontSize={20}
+                fontFamily={"inter"}
+              />
               <Spacer height={6} />
               <TouchableOpacity>
                 <CustomText
                   label={"Manage Your Account"}
                   color={colors.link}
                   fontSize={13}
-                  fontFamily={'inter'}
+                  fontFamily={"inter"}
                 />
               </TouchableOpacity>
             </View>
@@ -70,7 +81,9 @@ const Profile = () => {
         </PH10>
       </PV10>
       {/* menu */}
-      <Spacer height={20} />
+      <Spacer height={10} />
+      <Line elevation={1} />
+      <Spacer height={10} />
       <PH45>
         {settingList.map((item) => (
           <TouchableOpacity activeOpacity={0.7}>
@@ -79,7 +92,7 @@ const Profile = () => {
                 label={item.name}
                 color={colors.white}
                 fontSize={12}
-                fontFamily={'inter'} 
+                fontFamily={"inter"}
               />
             </PV10>
           </TouchableOpacity>
@@ -116,3 +129,18 @@ const ProfileImage = styled(TouchableOpacity, {
   overflow: "hidden",
   // backgroundColor:colors.white
 });
+
+const Line = styled(View, (props)=>({
+  height: 1,
+  width: "100%",
+  backgroundColor: colors.black,
+  shadowColor: "#E1E8F1",
+  shadowOffset: {
+    width: 0,
+    height: 1,
+  },
+  shadowOpacity: 0.9,
+  shadowRadius: 3,
+
+  elevation: props.elevation,
+}));

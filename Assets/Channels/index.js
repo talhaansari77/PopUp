@@ -8,5 +8,9 @@ const Channels = {
     Roku:require('./roku.png'),
     Colors:require('./colors.png'),
     FavNet:require('./favNet.png'),
+    Banner:require('./banner.png'),
+    Thumbnail:require('./thumnail.png'),
+    BigThumbnail:require('./bigThumnail.png'),
+    logo:require('./netflix-logo.png'),
 }
 export default Channels;
