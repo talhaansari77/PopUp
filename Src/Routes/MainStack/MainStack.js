@@ -12,6 +12,7 @@ import CustomText from "../../Components/CustomText";
 import { View } from "react-native";
 import styled from "react-native-styled-components";
 import SearchScreen from "../../Screens/Main/SearchScreen/SearchScreen";
+import AddReminder from "../../Screens/Main/AddReminder/AddReminder";
 const MainStack = () => {
   const Tab = createBottomTabNavigator();
   return (
@@ -75,6 +76,8 @@ const MainStack = () => {
       }}
       initialRouteName="Home"
     >
+      {/* <AddReminder /> */}
+      {/* <Tab.Screen name="AddReminder" component={AddReminder} /> */}
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Live" component={Live} />
       <Tab.Screen name="AddNew" component={Favorite} />
