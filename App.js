@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import "react-native-gesture-handler";
+import { LogBox, View } from "react-native";
+import RootNavigator from "./Src/Routes";
+
+import { Provider } from "redux";
+import { store } from "./Src/Redux/Store";
+
+LogBox.ignoreLogs(["VirtualizedLists", "Warning:..."]);
+LogBox.ignoreAllLogs();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    //  <Provider store={store}>
+    <RootNavigator />
+    //  </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
