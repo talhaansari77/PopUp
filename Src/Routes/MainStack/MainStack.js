@@ -81,7 +81,9 @@ const MainStack = () => {
       <Tab.Screen name="Live" component={Live} />
       <Tab.Screen name="AddNew" component={Favorite} />
       <Tab.Screen name="Favorite" component={Favorite} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Profile" component={Profile}
+      
+      />
       <Tab.Screen
         name="ChannelScreen"
         component={ChannelScreen}
