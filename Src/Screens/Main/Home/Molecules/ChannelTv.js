@@ -14,9 +14,23 @@ import styled from "react-native-styled-components";
 import { moderateScale, verticalScale } from "react-native-size-matters";
 import { Spacer } from "../../../../Components/Spacer";
 
+const channelList = [
+  { id: 1, name: Channels.AmazonPrime, label: "AmazonPrime" },
+  { id: 2, name: Channels.YouTube, label: "YouTube" },
+  { id: 3, name: Channels.Roku, label: "Roku" },
+  { id: 4, name: Channels.Disnep, label: "Disnep" },
+  { id: 5, name: Channels.BBC, label: "BBC" },
+  // {id:6,name:Channels.Colors, label:"Colors"},
+  { id: 7, name: Channels.Netflix, label: "Netflix" },
+];
+const FavChannelList = [
+  { id: 1, name: Channels.FavNet, label: "NetFlix" },
+  { id: 2, name: Channels.Roku, label: "Roku" },
+  { id: 3, name: Channels.Colors, label: "Colors" },
+];
 const ChannelTv = () => {
   return (
-    <>
+    <ScrollView>
       <MainChannel>
         <ChannelHeader>
           <CustomText
@@ -38,20 +52,19 @@ const ChannelTv = () => {
         </ChannelHeader>
 
         <Channel>
-          {[1, 2, 3, 5].map(() => (
+          {channelList.map((channel) => (
             <ChannelContainer>
-              <View style={{ width: "100%", height: verticalScale(80) }}>
+              <ChannelImageCon>
                 <Image
-                  source={Channels.Netflix}
+                  source={channel.name}
                   resizeMode={"stretch"}
-                  style={{ width: "100%", height: "100%" }}
+                  style={hw100}
                 />
-              </View>
-              <ChannelNameContainer
-              >
+              </ChannelImageCon>
+              <ChannelNameContainer>
                 <CustomText
-                  label="Netflix"
-                  fontSize={"20"}
+                  label={channel.label}
+                  fontSize={16}
                   color={colors.white}
                 />
               </ChannelNameContainer>
@@ -70,16 +83,16 @@ const ChannelTv = () => {
       </MainChannel>
       <PL20>
         <ScrollView horizontal>
-          {[1, 2, 3, 5].map(() => (
+          {FavChannelList.map((channel) => (
             <>
               <View>
-                <View style={{ width: "100%" }}>
-                  <Image source={Channels.Netflix} resizeMode={"contain"} />
+                <View style={w100}>
+                  <Image source={channel.name} resizeMode={"contain"} />
                 </View>
                 <ChannelNameContainer>
                   <CustomText
-                    label="Netflix"
-                    fontSize={"20"}
+                    label={channel.label}
+                    fontSize={16}
                     color={colors.white}
                   />
                 </ChannelNameContainer>
@@ -89,7 +102,8 @@ const ChannelTv = () => {
           ))}
         </ScrollView>
       </PL20>
-    </>
+      <Spacer height={20} />
+    </ScrollView>
   );
 };
 
@@ -124,8 +138,19 @@ const ChannelNameContainer = styled(View, {
   backgroundColor: colors.lightBlack,
   height: 40,
   alignItems: "center",
-  justifyContent:"center",
+  justifyContent: "center",
   width: "100%",
 });
+const ChannelImageCon = styled(View, {
+  width: "100%",
+  height: verticalScale(80),
+});
+const hw100={
+  width: "100%", height: "100%"
+}
+const w100={
+  width: "100%",
+  height: "30%"
+}
 
 export default ChannelTv;
