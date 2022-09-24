@@ -5,33 +5,29 @@ import Feather from "react-native-vector-icons/Feather";
 import { colors } from "../../../../Utils/Colors";
 import { verticalScale } from "react-native-size-matters";
 import styled from "react-native-styled-components";
+import CustomTextInput from "../../../../Components/CustomTextInput";
 
 const SearchBars = () => {
   return (
     <MainSearchBar>
-      <Searchbar
-        placeholder="Search Your Favourite tv Channel"
-        inputStyle={{fontSize:14,color:colors.white}}
-        style={{ backgroundColor: colors.lightBlack, height: 40, borderRadius: 7, opacity: 0.5, }}
-        // leftIconContainerStyle = {() =>
-        //   <Feather name={"search"} color={colors.white} size={30} />
-        // }
-        // searchIcon = {() =>
-        //   <Feather name={"search"} color={colors.white} size={30} />
-        // }
-        placeholderTextColor={colors.white}
-        icon={() => <Feather name={"search"} color={colors.white} size={25} />}
-      
+      <CustomTextInput
+        backgroundColor={colors.lightBlack}
+        borderRadius={10}
+        height={verticalScale(35)}
+        placeholderTextColor={colors.gray}
+        mainWidth={"100%"}
+        inputWidth={"75%"}
+        placeholder={"Select your favoirte tv shows"}
+        search
+        mic
       />
-       {/* <Feather name={"mic"} color={colors.white} size={30} /> */}
     </MainSearchBar>
   );
-  
 };
 
-const MainSearchBar = styled(View,{
+const MainSearchBar = styled(View, {
   width: "100%",
-  padding: 20
-})
+  padding: 20,
+});
 
 export default SearchBars;

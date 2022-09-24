@@ -9,10 +9,15 @@ import Favorite from "../../Screens/Main/Favorite";
 import Live from "../../Screens/Main/Live";
 import Home from "../../Screens/Main/Home";
 import CustomText from "../../Components/CustomText";
-import { View } from "react-native";
+import { Platform, View } from "react-native";
 import styled from "react-native-styled-components";
 
+import SearchScreen from "../../Screens/Main/SearchScreen/SearchScreen";
+import AddReminder from "../../Screens/Main/AddReminder/AddReminder";
+
+
 import ChannelScreen from "../../Screens/Main/ChannelScreen";
+
 
 const MainStack = () => {
   const Tab = createBottomTabNavigator();
@@ -32,19 +37,19 @@ const MainStack = () => {
           let iconName;
           if (route.name === "Profile") {
             iconName = "user";
-            size = focused ? 25 : 22;
+            size = focused ? 22 : 20;
           } else if (route.name === "Favorite") {
             iconName = "heart";
-            size = focused ? 25 : 22;
+            size = focused ? 22 : 20;
           } else if (route.name === "Home") {
             iconName = "home";
-            size = focused ? 25 : 22;
+            size = focused ? 22 : 20;
           } else if (route.name === "AddNew") {
             iconName = "plus-square";
-            size = focused ? 25 : 22;
+            size = focused ? 22 : 20;
           } else if (route.name === "Live") {
             iconName = "live-tv";
-            size = focused ? 25 : 22;
+            size = focused ? 22 : 20;
             return (
               <BottomTabIcon>
               <MaterialIcons
@@ -77,6 +82,8 @@ const MainStack = () => {
       }}
       initialRouteName="ChannelScreen"
     >
+      {/* <AddReminder /> */}
+      {/* <Tab.Screen name="AddReminder" component={AddReminder} /> */}
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Live" component={Live} />
       <Tab.Screen name="AddNew" component={Favorite} />
@@ -91,6 +98,13 @@ const MainStack = () => {
           tabBarItemStyle: { display: "none" },
         }}
       />
+      <Tab.Screen
+        name="AddReminder"
+        component={AddReminder}
+        options={{
+          tabBarItemStyle: { display: "none" },
+        }}
+      />
     </Tab.Navigator>
   );
 };
@@ -98,5 +112,6 @@ const MainStack = () => {
 export default MainStack;
 
 const BottomTabIcon=styled(View,{
-  justifyContent:"center", alignItems:"center"
+  justifyContent:"center", alignItems:"center",
+  marginTop: Platform.OS=="ios"? 15:0
 })

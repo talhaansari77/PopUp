@@ -12,6 +12,7 @@ import { Spacer } from "../../../../Components/Spacer";
 const Header = () => {
   return (
     <View>
+ 
         <Spacer height={Platform.OS=="ios"? 30:30}/>
       <Row>
         <Row>

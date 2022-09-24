@@ -211,10 +211,15 @@ const RemainderScreen = ({ navigation }) => {
       >
 
           <CustomGradientButton
+          onPress={()=>{
+            navigation.navigate("AddReminder")
+            
+
+          }}
             title={"Add New Show"}
             fontSize={20}
             width="90%"
-            borderRadius={20}
+            borderRadius={30}
             height={50}
             color1={"#B13025"}
             color2={"#79281E"}

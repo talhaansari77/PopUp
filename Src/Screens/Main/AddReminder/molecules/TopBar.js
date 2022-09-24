@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, Image, Platform } from "react-native";
+import { View, Text, SafeAreaView, Image, Platform,TouchableOpacity } from "react-native";
 import React from "react";
 import Feather from "react-native-vector-icons/Feather";
 import AntDesign from "react-native-vector-icons/AntDesign";
@@ -16,31 +16,20 @@ const TopBar = () => {
     // <SafeAreaView>
     <>
       <Main>
-        <LeftTopBar>
+      
+        <LeftTopBar
+ activeOpacity={0.6}
+ onPress={()=>{
+   navigation.goBack()
+
+ }}      
+        >
           <AntDesign
             name="left"
             color={colors.white}
             size={22}
-            style={{ marginTop: 30 }}
+            // style={{ marginTop: 20 }}
           />
-          {/* <Image source={icons.PopUp} size={33} /> */}
-
-          <View style={{ alignItems: "center", marginTop: 15 }}>
-            <CustomText
-              label={"Pop up Tv"}
-              fontFamily={"lovers"}
-              fontSize={22}
-              marginBottom={-9}
-              color={colors.white}
-            />
-            <CustomText
-              label={"Remote"}
-              fontFamily={"lovers"}
-              fontSize={25}
-              color={colors.white}
-            />
-            {/* Remote */}
-          </View>
         </LeftTopBar>
 
         <RightTopBar>
@@ -48,36 +37,34 @@ const TopBar = () => {
             name={"bell"}
             color={colors.white}
             size={25}
-            // onPress={() =>
-            //   navigation.navigate("RemainderStack", { screen: "Remainder" })
-            // }
-          />
-          <Feather name={"cast"} color={colors.white} size={25}
-             onPress={() =>
+            onPress={() =>
               navigation.navigate("RemainderStack", { screen: "Remainder" })
             }
-           />
+          />
+          <Feather name={"cast"} color={colors.white} size={25} 
+            onPress={() =>
+              navigation.navigate("RemainderStack", { screen: "Remainder" })
+            }
+          />
           <Feather
             name={"search"}
             color={colors.white}
             size={25}
-            onPress={() =>
-              navigation.navigate("SettingStack", { screen: "SearchScreen" })
-            }
+            // onPress={() =>
+            //   navigation.navigate("RemainderStack", { screen: "Remainder" })
+            // }
           />
           <Feather
             name={"grid"}
             color={colors.white}
             size={25}
-            onPress={() =>
-              navigation.navigate("SettingStack", { screen: "GeneralSetting" })
-            }
+            // onPress={() =>
+            //   navigation.navigate("SettingStack", { screen: "GeneralSetting" })
+            // }
           />
         </RightTopBar>
       </Main>
     </>
-    // <View></View>
-    // </SafeAreaView>
   );
 };
 
@@ -89,16 +76,22 @@ const Main = styled(View, {
   justifyContent: "space-between",
   alignItems: "flex-end",
   padding: 20,
+  opacity: 0.85,
+  width: "100%",
+  position: "absolute",
+  zIndex: 1000,
 });
 
-const LeftTopBar = styled(View, {
-  display: "flex",
-  flexDirection: "row",
-  marginTop: 12,
+const LeftTopBar = styled(TouchableOpacity, {
+  // display: "flex",
+  // flexDirection: "row",
+  marginTop: 28,
+
+  alignSelf: "center",
 });
 
 const RightTopBar = styled(View, {
-  // marginTop: 20,
+  marginTop: 34,
   display: "flex",
   flexDirection: "row",
   width: "50%",

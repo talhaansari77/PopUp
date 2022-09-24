@@ -3,6 +3,7 @@ export const colors = {
   secondary: "#910C0D",
   // blue: "#5D03EC",
   link: "#3FAEFF",
+  lightWhite: "#EBEBF599",
   black: "#2A2D32",
   black2: "#2D2E31",
   pureBlack: "#000000",

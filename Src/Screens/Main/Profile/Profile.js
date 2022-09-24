@@ -20,7 +20,7 @@ const settingList = [
   { id: 8, name: "Sign Out" },
 ];
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   return (
     <Container>
       <Spacer height={30} />
@@ -28,16 +28,26 @@ const Profile = () => {
         LeftSide={() => (
           <Row>
             <PH10>
+              <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={()=>{
+                navigation.goBack()
+
+              }}
+              >
               <Ionicons
                 name="chevron-back-outline"
                 size={25}
                 color={colors.white}
               />
+
+              </TouchableOpacity>
+            
             </PH10>
             <CustomText
               label={"Profile"}
               color={colors.white}
-              fontSize={20}
+              fontSize={18}
               fontFamily={"inter"}
             />
           </Row>
@@ -46,7 +56,7 @@ const Profile = () => {
       {/* manage Accounts */}
       <Spacer height={10} />
       <Line elevation={5}  />
-      <Spacer height={10} />
+      <Spacer height={5} />
       <PV10>
         <PH10>
           <Row>
@@ -60,11 +70,11 @@ const Profile = () => {
               />
             </ProfileImage>
             <Spacer width={18} />
-            <View>
+            <View style={{paddingTop:verticalScale(10)}}> 
               <CustomText
-                label={"NAME"}
+                label={"Name"}
                 color={colors.white}
-                fontSize={20}
+                fontSize={18}
                 fontFamily={"inter"}
               />
               <Spacer height={6} />
@@ -72,7 +82,7 @@ const Profile = () => {
                 <CustomText
                   label={"Manage Your Account"}
                   color={colors.link}
-                  fontSize={13}
+                  fontSize={12}
                   fontFamily={"inter"}
                 />
               </TouchableOpacity>
@@ -81,8 +91,9 @@ const Profile = () => {
         </PH10>
       </PV10>
       {/* menu */}
-      <Spacer height={10} />
-      <Line elevation={1} />
+      {/* <Spacer height={5} /> */}
+      <View style={{width:"100%",height:0.4,backgroundColor:colors.lightWhite}}></View>
+      {/* <Line elevation={1} /> */}
       <Spacer height={10} />
       <PH45>
         {settingList.map((item) => (
@@ -112,20 +123,22 @@ const PH10 = styled(View, {
   paddingHorizontal: scale(10),
 });
 const PH45 = styled(View, {
-  paddingHorizontal: scale(45),
+  paddingHorizontal: scale(30),
 });
 const PV10 = styled(View, {
   paddingVertical: verticalScale(10),
 });
 const Row = styled(View, {
   flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "center",
+  // paddingTop:verticalScale
+  // alignItems: "center",
+  // justifyContent: "center",
 });
 const ProfileImage = styled(TouchableOpacity, {
-  height: 100,
-  width: 100,
+  height: 90,
+  width: 90,
   borderRadius: 50,
+  marginLeft:verticalScale(20),
   overflow: "hidden",
   // backgroundColor:colors.white
 });
@@ -133,14 +146,14 @@ const ProfileImage = styled(TouchableOpacity, {
 const Line = styled(View, (props)=>({
   height: 1,
   width: "100%",
-  backgroundColor: colors.black,
+  backgroundColor: colors.lightBlack,
   shadowColor: "#E1E8F1",
   shadowOffset: {
     width: 0,
     height: 1,
   },
-  shadowOpacity: 0.9,
-  shadowRadius: 3,
+  shadowOpacity: 0.5,
+  shadowRadius: 1,
 
   elevation: props.elevation,
 }));

@@ -20,14 +20,7 @@ const SearchList = () => {
       MovieLogo: movies.nbc,
       Moviename: "jophery",
       Thumbnail: movies.movie1,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
+ 
     },
     {
       id: 2,
@@ -35,33 +28,79 @@ const SearchList = () => {
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
       MovieLogo: movies.Netflix,
-      Moviename: "jpohery",
+      Moviename: "Lock & key",
       Thumbnail: movies.movie2,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
+      
     },
     {
       id: 3,
       circle: (
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
+      MovieLogo: movies.Netflix,
+      Moviename: "Never Have I Ever",
+      Thumbnail: movies.movie3,
+   
+    },
+    {
+      id: 4,
+      circle: (
+        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
+      ),
+      MovieLogo: movies.Netflix,
+      Moviename: "Moon Knight",
+      Thumbnail: movies.movie2,
+     
+    },
+    {
+      id: 4,
+      circle: (
+        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
+      ),
       MovieLogo: movies.disnep,
+      Moviename: "The Mandalorian",
+      Thumbnail: movies.movie4,
+      
+    },
+    {
+      id: 4,
+      circle: (
+        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
+      ),
+      MovieLogo: movies.disnep,
+      Moviename: "Jeopardy",
+      Thumbnail: movies.movie2,
+    
+    },
+    {
+      id: 4,
+      circle: (
+        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
+      ),
+      MovieLogo: movies.nbc,
+      Moviename: "Money Heist",
+      Thumbnail: movies.movie3,
+      
+    },
+    {
+      id: 4,
+      circle: (
+        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
+      ),
+      MovieLogo: movies.Netflix,
+      Moviename: "jpohery",
+      Thumbnail: movies.movie4,
+     
+    },
+    {
+      id: 4,
+      circle: (
+        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
+      ),
+      MovieLogo: movies.Netflix,
       Moviename: "jpohery",
       Thumbnail: movies.movie3,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
+    
     },
     {
       id: 4,
@@ -69,118 +108,9 @@ const SearchList = () => {
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
       MovieLogo: movies.Netflix,
-      Moviename: "jpohery",
+      Moviename: "Lock & key",
       Thumbnail: movies.movie4,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
-    },
-    {
-      id: 4,
-      circle: (
-        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-      ),
-      MovieLogo: movies.Netflix,
-      Moviename: "jpohery",
-      Thumbnail: movies.movie4,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
-    },
-    {
-      id: 4,
-      circle: (
-        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-      ),
-      MovieLogo: movies.Netflix,
-      Moviename: "jpohery",
-      Thumbnail: movies.movie4,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
-    },
-    {
-      id: 4,
-      circle: (
-        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-      ),
-      MovieLogo: movies.Netflix,
-      Moviename: "jpohery",
-      Thumbnail: movies.movie4,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
-    },
-    {
-      id: 4,
-      circle: (
-        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-      ),
-      MovieLogo: movies.Netflix,
-      Moviename: "jpohery",
-      Thumbnail: movies.movie4,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
-    },
-    {
-      id: 4,
-      circle: (
-        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-      ),
-      MovieLogo: movies.Netflix,
-      Moviename: "jpohery",
-      Thumbnail: movies.movie4,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
-    },
-    {
-      id: 4,
-      circle: (
-        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-      ),
-      MovieLogo: movies.Netflix,
-      Moviename: "jpohery",
-      Thumbnail: movies.movie4,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
+     
     },
   ];
   return (
@@ -194,29 +124,35 @@ const SearchList = () => {
 
             <View style={{ flex: 8.25 }}>
               <InnerMain>
-                <View style={{ flexDirection: "row", alignSelf: "center" }}>
+                <View style={{ flexDirection: "row", alignSelf: "center",width:"50%" }}>
                   <Image source={list.MovieLogo} resizeMode={"contain"} />
                   <CustomText
                     label={list.Moviename}
                     fontSize={15}
+                    numberOfLines={1}
                     color={colors.white}
                     marginLeft={10}
                     fontWeight={"500"}
                   />
                 </View>
 
-                <View style={{ paddingTop: 4, marginBottom: 3 }}>
+                <View style={{ height:53, width:85,  marginBottom: 4,borderRadius:5 }}>
                   <Image
                     source={list.Thumbnail}
-                    style={{ height: 53, width: 85 }}
+                    style={{ height: "100%", width: "100%" }}
                   />
                 </View>
               </InnerMain>
               <Shadow />
             </View>
 
-            <View style={{ flex: 0.5, alignSelf: "center" }}>
-              {list.leftArrow}
+            <View style={{ flex: 0.5, alignSelf: "center",marginLeft:5 }}>
+            <Feather
+          name={"arrow-up-left"}
+          color={colors.white}
+          height={50}
+          size={25}
+        />
             </View>
           </Main>
         ))}

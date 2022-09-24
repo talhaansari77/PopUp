@@ -9,7 +9,7 @@ const SettingStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      // initialRouteName={"Settings"}
+      initialRouteName={"Settings"}
     >
       <Stack.Screen name="GeneralSettings" component={GeneralSettings} />
       <Stack.Screen name="SearchScreen" component={SearchScreen} />

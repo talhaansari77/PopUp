@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView,TouchableOpacity,TextInput } from "react-native";
 import React from "react";
 import styled from "react-native-styled-components";
 import { Searchbar } from "react-native-paper";
@@ -9,24 +9,29 @@ import { colors } from "../../../Utils/Colors";
 import CustomTextInput from "../../../Components/CustomTextInput";
 import { LinearGradient } from "expo-linear-gradient";
 import SearchList from "./Molecules/SearchList";
-import { TextInput } from "react-native-gesture-handler";
 
 const SearchScreen = ({navigation: {goBack}}) => {
   return (
+    <>
     <LinearGradient colors={["#2A2D32", "#221F1F"]} style={{ flex: 1 }}>
       <MainBody>
         <SafeAreaView>
           <Searching>
-            <View>
-              <AntDesign name="left" color={colors.white} size={22} onPress={() => goBack()}  />
-            </View>
+            <TouchableOpacity style={{marginRight:5}}
+            onPress={()=>{
+              navigation.goBack()
+
+            }}
+            >
+              <AntDesign name="left" color={colors.white} size={20} onPress={() => goBack()}  />
+            </TouchableOpacity>
             <View style={{ alignItems: "center" }}>
               <CustomTextInput
                 SelfAlign={"center"}
                 backgroundColor={colors.lightBlack}
                 borderColor={colors.lightBlack}
-                width={"95%"}
-                height={50}
+                width={"92%"}
+                height={43}
                 borderRadius={10}
                 placeholder={"Search Your Show"}
                 placeholderTextColor={colors.gray}
@@ -39,8 +44,7 @@ const SearchScreen = ({navigation: {goBack}}) => {
               <Feather
                 name={"mic"}
                 color={colors.white}
-                height={50}
-                size={25}
+                size={22}
               />
             </Mic>
           </Searching>
@@ -56,6 +60,7 @@ const SearchScreen = ({navigation: {goBack}}) => {
            />
       </View>
     </LinearGradient>
+    </>
   );
 };
 
@@ -71,6 +76,7 @@ const Mic = styled(View, {
   borderRadius: 50,
   height: 40,
   width: 40,
+  marginLeft:verticalScale(5),
   justifyContent: "center",
   alignItems: "center",
 });
@@ -80,6 +86,7 @@ const Searching = styled(View, {
   flexDirection: "row",
   justifyContent: "space-evenly",
   alignItems: "center",
+  
 
   // flex: 1,
 });
