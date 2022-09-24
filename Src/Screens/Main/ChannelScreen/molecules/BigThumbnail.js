@@ -6,6 +6,7 @@ import { scale, verticalScale } from "react-native-size-matters";
 import CustomText from "../../../../Components/CustomText";
 import { colors } from "../../../../Utils/Colors";
 import { Spacer } from "../../../../Components/Spacer";
+import commonStyles from "../../../../Utils/CommonStyles";
 
 const BigThumbnail = () => {
   return (
@@ -13,7 +14,7 @@ const BigThumbnail = () => {
       <Image source={Channels.BigThumbnail} style={h153} />
       <VideoDetail>
         <ChannelIcon>
-          <Image source={Channels.logo} resizeMode="contain" />
+          <Image source={Channels.logo}   resizeMode="contain" />
         </ChannelIcon>
         <Spacer width={10}/>
         <View>
@@ -52,4 +53,5 @@ const ChannelIcon = styled(View, {
 });
 const h153 = {
   height: 153,
+width:"100%"
 };

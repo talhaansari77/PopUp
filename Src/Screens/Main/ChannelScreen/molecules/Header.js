@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Platform } from "react-native";
 import React from "react";
 import CustomText from "../../../../Components/CustomText";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -12,7 +12,7 @@ import { Spacer } from "../../../../Components/Spacer";
 const Header = () => {
   return (
     <View>
-        <Spacer height={20}/>
+        <Spacer height={Platform.OS=="ios"? 30:30}/>
       <Row>
         <Row>
           <PH10>
@@ -25,7 +25,7 @@ const Header = () => {
           <CustomText
             label={"NetFlix"}
             color={colors.white}
-            fontSize={16}
+            fontSize={14}
             fontFamily={"inter"}
           />
         </Row>
@@ -57,6 +57,6 @@ const BtnContainer = styled(View, {
   alignItems: "center",
   width:"50%",
   justifyContent: "space-between",
-  paddingHorizontal: scale(10),
+  paddingHorizontal: scale(15),
 // backgroundColor:"red"
 });

@@ -8,6 +8,8 @@ const movies = {
     movie3:require('./movie3.png'),
     movie4:require('./movie4.png'),
     movie5:require('./movie5.png'),
+    tranparant:require('./tran.png'),
+
     remainderMov1:require('./remindermovie1.png'),
 
 }

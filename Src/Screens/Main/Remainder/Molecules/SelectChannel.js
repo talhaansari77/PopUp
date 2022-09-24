@@ -4,7 +4,7 @@ import { ScaledSheet,verticalScale } from 'react-native-size-matters'
 import { colors } from '../../../../Utils/Colors'
 import CustomText from '../../../../Components/CustomText'
 
-const SelectChannel = ({name,item,count,setCount}) => {
+const SelectChannel = ({name,item,count,setCount,textLength}) => {
   return (
     <View style={styles.selectConatiner}>
     <TouchableOpacity
@@ -22,8 +22,13 @@ const SelectChannel = ({name,item,count,setCount}) => {
         fontFamily="bold"
         fontSize={verticalScale(9)}
       />
+      {/* textLength */}
     </TouchableOpacity>
-    {item.id == count ? <View style={styles.lineConatiner}></View> : null}
+    {item.id == count ? <View style={[styles.lineConatiner,{
+              width:textLength *9,
+
+
+    }]}></View> : null}
   </View>
   
   )
@@ -41,7 +46,6 @@ const styles = ScaledSheet.create({
         // width: "50%",
       },
       lineConatiner: {
-        width: "60@s",
         height: verticalScale(2),
         backgroundColor: colors.white,
         borderTopLeftRadius:5,

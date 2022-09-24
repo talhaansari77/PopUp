@@ -16,7 +16,7 @@ const TopNav = () => {
         tabBarStyle: {
           backgroundColor: colors.black,
           height: verticalScale(40),
-          marginHorizontal: scale(10),
+          // marginHorizontal: scale(10),
           elevation: 0,
         },
         tabBarLabelStyle: { fontSize: 12 },

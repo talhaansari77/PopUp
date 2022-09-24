@@ -29,6 +29,8 @@ const Calender = () => {
      
 
         </View>
+        <View style={styles.clanderContainer}>
+
         <LinearGradient style={styles.calender}
 colors={['#B13025', '#28100DFC',]} > 
 
@@ -40,6 +42,8 @@ colors={['#B13025', '#28100DFC',]} >
       />
 
         </LinearGradient>
+        </View>
+
     </View>
   )
 }
@@ -74,6 +78,22 @@ const styles = ScaledSheet.create({
 
 
         shadowOffset:{width:2,height:2}
+    },
+    clanderContainer:{
+
+      width:55,
+      height:55,
+      borderRadius:99,
+    shadowColor:"#B13025",
+    //   backgroundColor: colors.black,
+    shadowRadius: 3,
+    elevation: 4,
+    alignItems: "center",
+    justifyContent: "center",
+    //   borderWidth:2,
+    shadowOpacity: 1,
+  
+    shadowOffset: { width: 4, height: 4 },
     }
     
 

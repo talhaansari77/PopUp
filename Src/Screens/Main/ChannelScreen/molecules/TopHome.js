@@ -19,6 +19,8 @@ const TopHome = () => {
     <Container>
       {/* <ScrollView> */}
       <Banner />
+      <ScrollView>
+
       <ChannelStatus>
         <Center>
           <CustomText
@@ -67,8 +69,16 @@ const TopHome = () => {
           fontFamily={"inter"}
           textAlign={"center"}
           fontSize={8}
-        />
-        <Entypo name={"chevron-right"} color={colors.gray} size={16} />
+        
+        >
+     
+
+          </CustomText>
+          <View style={{marginTop:verticalScale(10),marginLeft:verticalScale(-20)}}>
+          <Entypo name={"chevron-right"} color="#B9B7B7" size={16}  />
+
+
+          </View>
       </ChannelDescription>
       <BigThumbnail />
       <Divider color={colors.gray} />
@@ -91,6 +101,7 @@ const TopHome = () => {
             </>
           ))}
         </Playlist>
+      </ScrollView>
       </ScrollView>
       {/* </ScrollView> */}
     </Container>
