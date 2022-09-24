@@ -8,20 +8,22 @@ import Profile from "../../Screens/Main/Profile";
 import Favorite from "../../Screens/Main/Favorite";
 import Live from "../../Screens/Main/Live";
 import Home from "../../Screens/Main/Home";
+import CustomText from "../../Components/CustomText";
+import { View } from "react-native";
+import styled from "react-native-styled-components";
 const MainStack = () => {
   const Tab = createBottomTabNavigator();
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarShowLabel: true,
+        tabBarShowLabel: false,
+
         tabBarStyle: {
         backgroundColor: "#910C0D",
         borderColor: "#910C0D",
           // opacity: "0.9",
-          height: verticalScale(70),
-          paddingHorizontal: scale(30),
-          // marginVertical: scale(30),
+          height: verticalScale(60),
         },
         tabBarIcon: ({ focused, size, color }) => {
           let iconName;
@@ -41,16 +43,22 @@ const MainStack = () => {
             iconName = "live-tv";
             size = focused ? 25 : 22;
             return (
+              <BottomTabIcon>
               <MaterialIcons
                 name={iconName}
                 size={moderateScale(size)}
                 color={color}
               />
+              <CustomText label={route.name} color={colors.white}/>
+            </BottomTabIcon>
             );
           }
 
           return (
-            <Feather name={iconName} size={moderateScale(size)} color={color} />
+            <BottomTabIcon>
+              <Feather name={iconName} size={moderateScale(size)} color={color} />
+              <CustomText label={route.name} color={colors.white}/>
+            </BottomTabIcon>
           );
         },
       })}
@@ -83,3 +91,7 @@ const MainStack = () => {
 };
 
 export default MainStack;
+
+const BottomTabIcon=styled(View,{
+  justifyContent:"center", alignItems:"center"
+})

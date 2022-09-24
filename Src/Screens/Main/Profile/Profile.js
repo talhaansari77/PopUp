@@ -6,7 +6,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import styled from "react-native-styled-components";
 import { colors } from "../../../Utils/Colors";
 import { scale, verticalScale } from "react-native-size-matters";
-import { Divider } from "react-native-elements";
+import { Divider } from 'react-native-elements/dist/divider/Divider'
 import { Spacer } from "../../../Components/Spacer";
 
 const settingList = [
@@ -23,7 +23,7 @@ const settingList = [
 const Profile = () => {
   return (
     <Container>
-      <Spacer height={20} />
+      <Spacer height={30} />
       <ProfileNav
         LeftSide={() => (
           <Row>
@@ -34,8 +34,8 @@ const Profile = () => {
                 color={colors.white}
               />
             </PH10>
-            <CustomText label={"Profile"} color={colors.white} fontSize={20}  />
-            <Divider color={colors.white} />
+            <CustomText label={"Profile"} color={colors.white} fontSize={20} fontFamily={'inter'} />
+            <Divider />
           </Row>
         )}
       />
@@ -55,18 +55,21 @@ const Profile = () => {
             </ProfileImage>
             <Spacer width={18} />
             <View>
-              <CustomText label={"NAME"} color={colors.white} fontSize={20} />
+              <CustomText label={"NAME"} color={colors.white} fontSize={20} fontFamily={'inter'}  />
               <Spacer height={6} />
-              <CustomText
-                label={"Manage Your Account"}
-                color={colors.link}
-                fontSize={13}
-              />
+              <TouchableOpacity>
+                <CustomText
+                  label={"Manage Your Account"}
+                  color={colors.link}
+                  fontSize={13}
+                  fontFamily={'inter'}
+                />
+              </TouchableOpacity>
             </View>
           </Row>
         </PH10>
       </PV10>
-      {/*  */}
+      {/* menu */}
       <Spacer height={20} />
       <PH45>
         {settingList.map((item) => (
@@ -76,6 +79,7 @@ const Profile = () => {
                 label={item.name}
                 color={colors.white}
                 fontSize={12}
+                fontFamily={'inter'} 
               />
             </PV10>
           </TouchableOpacity>

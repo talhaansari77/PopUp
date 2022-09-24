@@ -12,6 +12,7 @@ LogBox.ignoreAllLogs();
 export default function App() {
   const [loaded] = useFonts({
     lovers: require("./Assets/Fonts/LoversQuarrel-Regular.ttf"),
+    inter: require("./Assets/Fonts/Inter-VariableFont_slnt.ttf"),
   });
 
   if (!loaded) return <View />;
