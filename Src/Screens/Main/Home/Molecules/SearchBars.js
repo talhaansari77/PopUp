@@ -11,7 +11,8 @@ const SearchBars = () => {
     <MainSearchBar>
       <Searchbar
         placeholder="Search Your Favourite tv Channel"
-        style={{ backgroundColor: colors.lightBlack, height: 40, borderRadius: 7, opacity: 0.5 }}
+        inputStyle={{fontSize:14,color:colors.white}}
+        style={{ backgroundColor: colors.lightBlack, height: 40, borderRadius: 7, opacity: 0.5, }}
         // leftIconContainerStyle = {() =>
         //   <Feather name={"search"} color={colors.white} size={30} />
         // }

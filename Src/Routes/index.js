@@ -22,8 +22,8 @@ const RootNavigator = () => {
       >
         {/* <Stack.Screen name="AuthStack" component={AuthStack} /> */}
 
-        <Stack.Screen name="SettingStack" component={SettingStack} /> 
         <Stack.Screen name="MainStack" component={MainStack} />
+        <Stack.Screen name="SettingStack" component={SettingStack} /> 
         {/* {/* <Stack.Screen name="Chat" component={Chat} /> */}
       </Stack.Navigator>
     </NavigationContainer>
