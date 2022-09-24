@@ -5,6 +5,7 @@ export const colors = {
   black: "#2A2D32",
   darkOrange: "#5D03EC",
   orange: "#FB9334",
+  lightBlack: "#3B3B3D",
   lightRed: "#E24E59",
   gray: "#8D8D8D",
   white: "#FFFFFF",
@@ -15,5 +16,5 @@ export const colors = {
   blue: "blue",
   switchGray: "#E2E2E2",
   halfGray:"#9F9F9F",
-  lightBlack:"#707070",
+  // lightBlack:"#707070",
 };

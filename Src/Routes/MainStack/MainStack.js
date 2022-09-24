@@ -72,7 +72,7 @@ const MainStack = () => {
         showIcon: true,
         
       }}
-      initialRouteName="Profile"
+      initialRouteName="Home"
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Live" component={Live} />
