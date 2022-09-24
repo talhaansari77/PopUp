@@ -57,17 +57,17 @@ const TopBar = () => {
             name={"search"}
             color={colors.white}
             size={30}
-            // onPress={() =>
-            //   navigation.navigate("SettingStack", { screen: "SearchScreen" })
-            // }
+            onPress={() =>
+              navigation.navigate("SettingStack", { screen: "SearchScreen" })
+            }
           />
           <Feather
             name={"grid"}
             color={colors.white}
             size={30}
-            // onPress={() =>
-            //   navigation.navigate("SettingStack", { screen: "GeneralSetting" })
-            // }
+            onPress={() =>
+              navigation.navigate("SettingStack", { screen: "GeneralSetting" })
+            }
           />
         </RightTopBar>
       </Main>

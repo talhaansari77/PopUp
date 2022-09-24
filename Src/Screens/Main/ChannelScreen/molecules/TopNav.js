@@ -46,7 +46,7 @@ const TopNav = () => {
           return <CustomText label={screenName} color={colors.white} />;
         },
         tabBarLabelStyle: { fontSize: 12 },
-        tabBarItemStyle: { width: 80 },
+        tabBarItemStyle: { width: 85 },
         tabBarScrollEnabled: true,
         tabBarIndicatorStyle: {
           backgroundColor: colors.white,

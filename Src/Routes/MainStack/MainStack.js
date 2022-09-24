@@ -76,8 +76,9 @@ const MainStack = () => {
           );
         },
       })}
-
+      initialRouteName={"AddReminder"}
     >
+
       {/* <AddReminder /> */}
       {/* <Tab.Screen name="AddReminder" component={AddReminder} /> */}
       <Tab.Screen name="Home" component={Home} />
