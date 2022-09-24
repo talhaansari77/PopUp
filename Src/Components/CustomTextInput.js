@@ -9,6 +9,7 @@ import {
 import React from "react";
 import {
   moderateScale,
+  scale,
   ScaledSheet,
   verticalScale,
 } from "react-native-size-matters";
@@ -16,6 +17,12 @@ import {
 import CustomText from "./CustomText";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../Utils/Colors";
+import Feather from "react-native-vector-icons/Feather";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
+import { LinearGradient } from "expo-linear-gradient";
+import { Divider } from "react-native-elements";
+
 const CustomTextInput = ({
   eyeClick,
   password,
@@ -65,6 +72,161 @@ const CustomTextInput = ({
             source={props.icon}
           />
         ) : null}
+
+        {props.search ? (
+          <View style={{ display: "flex", flexDirection: "row" }}>
+            <View
+              style={{
+                marginLeft: 10,
+                alignSelf: "center",
+              }}
+            >
+              <Feather
+                name={"search"}
+                color={colors.lightWhite}
+                size={27}
+                // onPress={() =>
+                //   navigation.navigate("SettingStack", { screen: "SearchScreen" })
+                // }
+              />
+            </View>
+            <View
+              style={{
+                backgroundColor: colors.lightWhite,
+                height: verticalScale(36),
+                width: scale(2),
+                marginLeft: 10,
+              }}
+            ></View>
+          </View>
+        ) : props.calendar ? (
+          <View style={{ display: "flex", flexDirection: "row" }}>
+            <View
+              style={{
+                marginLeft: 10,
+                alignSelf: "center",
+              }}
+            >
+              <Feather
+                name={"calendar"}
+                color={colors.lightWhite}
+                size={27}
+                // onPress={() =>
+                //   navigation.navigate("SettingStack", { screen: "SearchScreen" })
+                // }
+              />
+            </View>
+            <View
+              style={{
+                backgroundColor: colors.lightWhite,
+                height: verticalScale(36),
+                width: scale(2),
+                marginLeft: 10,
+              }}
+            ></View>
+          </View>
+        ) : null}
+
+        {props.playCircle ? (
+          <View style={{ display: "flex", flexDirection: "row" }}>
+            <View
+              style={{
+                marginLeft: 10,
+                alignSelf: "center",
+              }}
+            >
+              <Feather
+                name={"play-circle"}
+                color={colors.lightWhite}
+                size={27}
+                // onPress={() =>
+                //   navigation.navigate("SettingStack", { screen: "SearchScreen" })
+                // }
+              />
+            </View>
+            <View
+              style={{
+                backgroundColor: colors.lightWhite,
+                height: verticalScale(36),
+                width: scale(2),
+                marginLeft: 10,
+              }}
+            ></View>
+          </View>
+        ) : null}
+
+        {props.tv ? (
+          <View style={{ display: "flex", flexDirection: "row" }}>
+            <View
+              style={{
+                marginLeft: 10,
+                alignSelf: "center",
+              }}
+            >
+              <Feather
+                name={"tv"}
+                color={colors.lightWhite}
+                size={27}
+                // onPress={() =>
+                //   navigation.navigate("SettingStack", { screen: "SearchScreen" })
+                // }
+              />
+            </View>
+            <View
+              style={{
+                backgroundColor: colors.lightWhite,
+                height: verticalScale(36),
+                width: scale(2),
+                marginLeft: 10,
+              }}
+            ></View>
+          </View>
+        ) : null}
+
+        {props.calendarClock ? (
+          <View style={{ display: "flex", flexDirection: "row" }}>
+            <View
+              style={{
+                marginLeft: 10,
+                alignSelf: "center",
+              }}
+            >
+              <MaterialCommunityIcons
+                name={"calendar-clock"}
+                color={colors.lightWhite}
+                size={27}
+                // onPress={() =>
+                //   navigation.navigate("SettingStack", { screen: "SearchScreen" })
+                // }
+              />
+            </View>
+            <View
+              style={{
+                backgroundColor: colors.lightWhite,
+                height: verticalScale(36),
+                width: scale(2),
+                marginLeft: 10,
+              }}
+            ></View>
+          </View>
+        ) : null}
+
+        {/* {props.lineargradient ? (
+          <View>
+            <LinearGradient
+              activeOpacity={0.6}
+              colors={[colors.primary, colors.lightBlack]}
+              padding={0.6}
+              paddingLeft={2.9}
+              paddingRight={2.9}
+              borderRadius={10}
+              // flexDirection={"row"}
+              start={{ x: 0, y: 0.5 }}
+              end={{ x: 1, y: 0.5 }}
+            ></LinearGradient>
+          </View>
+        ) : null} */}
+
         <TextInput
           style={[
             {
@@ -111,6 +273,30 @@ const CustomTextInput = ({
             {/* <Image style={styles.icon} source={eyeClick ? images.eye:images.hiddenEye } /> */}
           </TouchableOpacity>
         ) : null}
+
+        {props.mic ? (
+          <View style={{ marginRight: 10 }}>
+            <Feather
+              name={"mic"}
+              color={colors.lightWhite}
+              height={50}
+              size={27}
+              alignSlef={"end"}
+            />
+          </View>
+        ) : null}
+
+        {props.downArrow ? (
+          <View style={{ marginRight: 10 }}>
+            <SimpleLineIcons
+              name={"arrow-down"}
+              color={colors.lightWhite}
+              // height={50}
+              size={15}
+              alignSlef={"end"}
+            />
+          </View>
+        ) : null}
       </TouchableOpacity>
       {error ? (
         <CustomText
@@ -118,7 +304,7 @@ const CustomTextInput = ({
           children={error}
           fontSize={verticalScale(8)}
           color={colors.red}
-          fontWeight="600"
+          fontWeight={"600"}
           marginTop={verticalScale(5)}
         />
       ) : null}

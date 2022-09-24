@@ -13,6 +13,7 @@ import { TextInput } from "react-native-gesture-handler";
 
 const SearchScreen = ({navigation: {goBack}}) => {
   return (
+    <>
     <LinearGradient colors={["#2A2D32", "#221F1F"]} style={{ flex: 1 }}>
       <MainBody>
         <SafeAreaView>
@@ -56,6 +57,7 @@ const SearchScreen = ({navigation: {goBack}}) => {
            />
       </View>
     </LinearGradient>
+    </>
   );
 };
 

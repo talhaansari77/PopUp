@@ -15,17 +15,18 @@ const TopBar = () => {
   return (
     // <SafeAreaView>
     <>
+
       <Main>
         <LeftTopBar>
           <AntDesign
             name="left"
             color={colors.white}
             size={22}
-            style={{ marginTop: 30 }}
+            // style={{ marginTop: 20 }}
           />
           {/* <Image source={icons.PopUp} size={33} /> */}
 
-          <View style={{ alignItems: "center", marginTop: 10 }}>
+          {/* <View style={{ alignItems: "center", marginTop: 10 }}>
             <CustomText
               label={"Pop up Tv"}
               fontFamily={"lovers"}
@@ -39,8 +40,7 @@ const TopBar = () => {
               fontSize={25}
               color={colors.white}
             />
-            {/* Remote */}
-          </View>
+          </View> */}
         </LeftTopBar>
 
         <RightTopBar>
@@ -57,17 +57,17 @@ const TopBar = () => {
             name={"search"}
             color={colors.white}
             size={30}
-            // onPress={() =>
-            //   navigation.navigate("SettingStack", { screen: "SearchScreen" })
-            // }
+            onPress={() =>
+              navigation.navigate("SettingStack", { screen: "SearchScreen" })
+            }
           />
           <Feather
             name={"grid"}
             color={colors.white}
             size={30}
-            // onPress={() =>
-            //   navigation.navigate("SettingStack", { screen: "GeneralSetting" })
-            // }
+            onPress={() =>
+              navigation.navigate("SettingStack", { screen: "GeneralSetting" })
+            }
           />
         </RightTopBar>
       </Main>
@@ -85,16 +85,22 @@ const Main = styled(View, {
   justifyContent: "space-between",
   alignItems: "flex-end",
   padding: 20,
+  opacity: 0.85,
+  width: "100%",
+  position: "absolute",
+  zIndex: 1000,
 });
 
 const LeftTopBar = styled(View, {
-  display: "flex",
-  flexDirection: "row",
-  marginTop: 12,
+  // display: "flex",
+  // flexDirection: "row",
+  marginTop: 28,
+
+  alignSelf: "center",
 });
 
 const RightTopBar = styled(View, {
-  // marginTop: 20,
+  marginTop: 34,
   display: "flex",
   flexDirection: "row",
   width: "50%",

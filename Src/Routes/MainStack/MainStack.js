@@ -80,7 +80,7 @@ const MainStack = () => {
         showIcon: true,
         
       }}
-      initialRouteName="ChannelScreen"
+      initialRouteName="AddReminder"
     >
       {/* <AddReminder /> */}
       {/* <Tab.Screen name="AddReminder" component={AddReminder} /> */}
@@ -94,6 +94,13 @@ const MainStack = () => {
       <Tab.Screen
         name="ChannelScreen"
         component={ChannelScreen}
+        options={{
+          tabBarItemStyle: { display: "none" },
+        }}
+      />
+      <Tab.Screen
+        name="AddReminder"
+        component={AddReminder}
         options={{
           tabBarItemStyle: { display: "none" },
         }}
