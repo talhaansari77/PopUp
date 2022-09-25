@@ -4,7 +4,7 @@ import { colors } from "../../../../Utils/Colors";
 import { ScaledSheet } from "react-native-size-matters";
 import CustomText from "../../../../Components/CustomText";
 import { LinearGradient } from "expo-linear-gradient";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 const DaysList = ({ icon, txt2, txt1, item, count, setCount }) => {
   return (
@@ -19,7 +19,7 @@ const DaysList = ({ icon, txt2, txt1, item, count, setCount }) => {
               styles.mainContainer,
 
               {
-                padding:1,
+                padding:1.5,
                
               },
             ]}
@@ -43,10 +43,10 @@ const DaysList = ({ icon, txt2, txt1, item, count, setCount }) => {
           label={txt1}
         ></CustomText>
         {icon ? (
-          <Ionicons
-            name={"checkmark-circle-outline"}
+          <AntDesign
+            name={"checkcircle"}
             color={count == item.id ? colors.primary : colors.gray}
-            size={27}
+            size={20}
           />
         ) : (
           <CustomText
@@ -133,8 +133,9 @@ const styles = ScaledSheet.create({
     height: "55@vs",
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 15,
-    marginHorizontal: 10,
+    borderRadius: 10,
+    // marginHorizontal: 5,
+    marginRight:10,
     marginTop: 2,
   },
 });

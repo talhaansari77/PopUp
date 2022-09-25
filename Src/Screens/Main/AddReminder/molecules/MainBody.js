@@ -31,7 +31,7 @@ const MainBody = () => {
           <Searching>
             <GradientForm
               mainWidth={"100%"}
-              inputWidth={"75%"}
+              inputWidth={"72%"}
               placeholder={"Select your favoirte tv shows"}
               search
               mic
@@ -163,7 +163,7 @@ const SecondForm = styled(View, {
 
 const FormUpperText = styled(View, {
   alignSelf: "flex-start",
-  paddingLeft: 35,
+  paddingLeft: 20,
   marginBottom: 8,
 });
 

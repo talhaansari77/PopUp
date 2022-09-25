@@ -61,6 +61,7 @@ const TopBar = () => {
             name={"search"}
             color={colors.white}
             size={25}
+
             onPress={() =>
               navigation.navigate("SettingStack", { screen: "SearchScreen" })
             }
@@ -70,7 +71,7 @@ const TopBar = () => {
             color={colors.white}
             size={25}
             onPress={() =>
-              navigation.navigate("SettingStack", { screen: "GeneralSetting" })
+              navigation.navigate("SettingStack", { screen: "GeneralSettings" })
             }
           />
         </RightTopBar>

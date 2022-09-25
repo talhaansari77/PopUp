@@ -9,8 +9,6 @@ import { scale } from "react-native-size-matters";
 import { Divider } from "react-native-elements";
 import icons from "../../../../../Assets/Icons";
 import { ScrollView } from "react-native-gesture-handler";
-
-const SearchList = () => {
   const SearchLists = [
     {
       id: 1,
@@ -39,7 +37,7 @@ const SearchList = () => {
       ),
       MovieLogo: movies.Netflix,
       Moviename: "Never Have I Ever",
-      Thumbnail: movies.movie3,
+      Thumbnail: movies.movie1,
    
     },
     {
@@ -59,7 +57,7 @@ const SearchList = () => {
       ),
       MovieLogo: movies.disnep,
       Moviename: "The Mandalorian",
-      Thumbnail: movies.movie4,
+      Thumbnail: movies.movie1,
       
     },
     {
@@ -79,7 +77,7 @@ const SearchList = () => {
       ),
       MovieLogo: movies.nbc,
       Moviename: "Money Heist",
-      Thumbnail: movies.movie3,
+      Thumbnail: movies.movie1,
       
     },
     {
@@ -99,7 +97,7 @@ const SearchList = () => {
       ),
       MovieLogo: movies.Netflix,
       Moviename: "jpohery",
-      Thumbnail: movies.movie3,
+      Thumbnail: movies.movie1,
     
     },
     {
@@ -113,10 +111,11 @@ const SearchList = () => {
      
     },
   ];
+const SearchList = ({ search, setSearch, filerList }) => {
   return (
-    <ScrollView>
-      <View>
-        {SearchLists.map((list, index) => (
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={{marginTop:5}}>
+        {filerList.map((list, index) => (
           <Main>
             <View style={{ flex: 1.25, alignSelf: "center" }}>
               {list.circle}
@@ -127,7 +126,7 @@ const SearchList = () => {
                 <View style={{ flexDirection: "row", alignSelf: "center",width:"50%" }}>
                   <Image source={list.MovieLogo} resizeMode={"contain"} />
                   <CustomText
-                    label={list.Moviename}
+                    label={list.name}
                     fontSize={15}
                     numberOfLines={1}
                     color={colors.white}
@@ -163,7 +162,7 @@ const SearchList = () => {
 
 const Main = styled(View, {
   display: "flex",
-  flexDirection:  "row",
+  flexDirection: "row",
   marginTop: scale(20),
 });
 
@@ -182,10 +181,10 @@ const Shadow = styled(View, {
     width: 0,
     height: 1,
   },
-  shadowOpacity: 0.9,
-  shadowRadius: 3,
+  shadowOpacity: 0.5,
+  shadowRadius: 2,
 
-  elevation: 24,
+  elevation: 4,
 });
 
 export default SearchList;

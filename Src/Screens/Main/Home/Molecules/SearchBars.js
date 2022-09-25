@@ -27,7 +27,8 @@ const SearchBars = () => {
 
 const MainSearchBar = styled(View, {
   width: "100%",
-  padding: 20,
+  padding: 10,
+  marginTop:10
 });
 
 export default SearchBars;

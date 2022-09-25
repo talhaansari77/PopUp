@@ -9,7 +9,7 @@ const GradientForm = (props) => {
     <>
       <LinearGradient
             activeOpacity={0.6}
-            style={{height:55,width:props.mainWidth,borderRadius:10}}
+            style={{height:53,width:props.mainWidth,borderRadius:10}}
             colors={[colors.primary, "#28100DFC"]}
             padding={0.2}
           
@@ -28,7 +28,7 @@ const GradientForm = (props) => {
                 inputWidth={props.inputWidth}
                 line={props.line}
                 // inputWidth={"50%"}
-                height={54}
+                height={52}
                 borderRadius={10}
                 placeholder={props.placeholder}
                 placeholderTextColor={colors.gray}

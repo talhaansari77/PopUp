@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView,ScrollView } from "react-native";
 import React from "react";
 import Banner from "./molecules/Banner";
 import TopBar from "./molecules/TopBar";
@@ -9,8 +9,12 @@ const AddReminder = () => {
   return (
     <View>
       <TopBar />
+      <ScrollView>
+
       <Banner />
       <MainBody />
+      </ScrollView>
+
      
     </View>
   );

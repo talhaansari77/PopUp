@@ -20,7 +20,7 @@ const SelectChannel = ({name,item,count,setCount,textLength}) => {
         label={name}
         color={item.id == count ? colors.white : colors.gray}
         fontFamily="bold"
-        fontSize={verticalScale(9)}
+        fontSize={verticalScale(10)}
       />
       {/* textLength */}
     </TouchableOpacity>

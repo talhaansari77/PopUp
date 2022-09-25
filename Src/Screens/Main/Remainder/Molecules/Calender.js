@@ -85,15 +85,23 @@ const styles = ScaledSheet.create({
       height:55,
       borderRadius:99,
     shadowColor:"#B13025",
-    //   backgroundColor: colors.black,
-    shadowRadius: 3,
+      backgroundColor: colors.red,
+    // shadowRadius: 3,
     elevation: 4,
-    alignItems: "center",
-    justifyContent: "center",
-    //   borderWidth:2,
-    shadowOpacity: 1,
+    // alignItems: "center",
+    // justifyContent: "center",
+    // //   borderWidth:2,
+    // shadowOpacity: 1,
   
-    shadowOffset: { width: 4, height: 4 },
+    // shadowOffset: { width: 4, height: 4 },
+    shadowColor: "#B13025",
+    shadowOffset: {
+      width: 2,
+      height: 2,
+    },
+    
+    shadowOpacity: 2,
+    shadowRadius: 3,
     }
     
 

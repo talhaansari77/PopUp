@@ -241,6 +241,7 @@ const CustomTextInput = ({
               paddingRight: props.paddingRight || 10,
               paddingHorizontal: props.paddingHorizontal,
               fontFamily: "bold",
+              color:colors.white,
               fontSize: verticalScale(13),
             },
           ]}

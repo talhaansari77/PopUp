@@ -1,4 +1,4 @@
-import { View, Text, Platform } from "react-native";
+import { View, Text, Platform,TouchableOpacity } from "react-native";
 import React from "react";
 import CustomText from "../../../../Components/CustomText";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -9,7 +9,7 @@ import Feather from "react-native-vector-icons/Feather";
 import Entypo from "react-native-vector-icons/Entypo";
 import { Spacer } from "../../../../Components/Spacer";
 
-const Header = () => {
+const Header = ({navigation}) => {
   return (
     <View>
  
@@ -17,11 +17,20 @@ const Header = () => {
       <Row>
         <Row>
           <PH10>
-            <Ionicons
+            <TouchableOpacity activeOpacity={0.6}
+            // onPress={()=>{
+            //   navigation.goBack()
+
+            // }}
+            >
+               <Ionicons
               name="chevron-back-outline"
               size={25}
               color={colors.white}
             />
+
+            </TouchableOpacity>
+           
           </PH10>
           <CustomText
             label={"NetFlix"}
@@ -52,6 +61,7 @@ const Row = styled(View, {
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "space-between",
+  marginTop:5
 });
 const BtnContainer = styled(View, {
   flexDirection: "row",

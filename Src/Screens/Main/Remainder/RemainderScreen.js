@@ -160,7 +160,7 @@ const RemainderScreen = ({ navigation }) => {
 
   return (
     <View style={styles.mainContainer}>
-      <View style={styles.child}>
+      <View >
         <TopHeader
           onPress={() => {
             navigation.goBack();
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   selContainer: {
-    height: "5%",
+    height: "3%",
   },
   absolute: {
     position: "absolute",

@@ -32,7 +32,7 @@ const settingList = [
 const GeneralSettings = ({navigation}) => {
   return (
     <Container>
-      <Spacer height={30} />
+      <Spacer height={40} />
       <ProfileNav
         LeftSide={() => (
           <Row>

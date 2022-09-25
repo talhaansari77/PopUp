@@ -115,11 +115,16 @@ const ChannelTv = () => {
 
 const MainChannel = styled(View, {
   width: "100%",
-  padding: 20,
+  paddingLeft:10,
+  paddingRight:10,
+  paddingTop:10
+  
+  // padding: 20,
+  
 });
 const PL20 = styled(View, {
   width: "100%",
-  paddingLeft: 20,
+  paddingLeft: 10,
 });
 
 const ChannelHeader = styled(View, {
@@ -137,7 +142,7 @@ const Channel = styled(View, {
   // paddingRight: 20,
 });
 const ChannelContainer = styled(TouchableOpacity, {
-  width: Dimensions.get("window").width / 2.3,
+  width: Dimensions.get("window").width / 2.2,
   marginVertical: verticalScale(5),
   backgroundColor:colors.lightBlack,
   borderRadius:10

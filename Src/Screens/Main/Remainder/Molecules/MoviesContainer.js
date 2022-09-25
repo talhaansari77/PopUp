@@ -28,7 +28,8 @@ const MoviesContainer = ({
   moviesImg,
   item,
 }) => {
-  const [checkBox, setcheckBox] = useState(-1);
+  // const [checkBox, setcheckBox] = useState(-1);
+  const [check, setCheck] = useState(false)
   return (
     <View style={styles.mainContainer}>
       <View style={{ alignItems: "center", paddingHorizontal: 10 }}>
@@ -120,12 +121,12 @@ const MoviesContainer = ({
       <CheckNoxCon
         activeOpacity={0.6}
         onPress={() => {
-          setcheckBox(item.id);
+          setCheck(!check);
         }}
       >
         <Octicons
           name="check"
-          color={checkBox == item.id ? colors.primary : "#000000"}
+          color={check  ? colors.primary : "#000000"}
           size={moderateScale(17)}
           // onPress={onPress}
         />
@@ -156,13 +157,15 @@ const MovContainer = styled(View, (props) => ({
   shadowColor: colors.white,
   //   backgroundColor: colors.black,
   shadowRadius: 3,
-  // elevation: 2,
+
+  // elevation: 1,
+
   alignItems: "center",
   justifyContent: "center",
   //   borderWidth:2,
   shadowOpacity: 0.5,
 
-  shadowOffset: { width: 1, height: 1 },
+  shadowOffset: { width: 1, height: 2 },
 }));
 
 // const InnContainer = styled(LinearGradient, (props) => ({

@@ -1,4 +1,4 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, Platform } from "react-native";
 import React from "react";
 import Channels from "../../../../../Assets/Channels";
 import styled from "react-native-styled-components";
@@ -14,7 +14,7 @@ const PlaylistItem = () => {
       <Image source={Channels.Thumbnail} style={thumbnailSize} />
       <Spacer width={10} />
       <Row>
-        <View style={{ width: "62%" }}>
+        <View style={{   width: Platform.OS === "android" ?  "65%": "70%" }}>
           <Spacer height={2} />
           <CustomText
             label={"Never Have I Ever | Official Trailer| Netflix"}
@@ -34,7 +34,7 @@ const PlaylistItem = () => {
             marginLeft={3}
           />
         </View>
-        <View>
+        <View style={{marginTop:5}}>
           <Entypo name={"dots-three-vertical"} color={colors.white} size={14} />
         </View>
       </Row>
