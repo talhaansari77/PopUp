@@ -16,5 +16,6 @@ export default Banner
 
 const BannerContainer=styled(View,{
     height:129,
-    backgroundColor:"red"
+    backgroundColor:"red",
+    marginTop:3
 })

@@ -8,6 +8,7 @@ import { Divider } from "react-native-elements/dist/divider/Divider";
 import { colors } from "../../../Utils/Colors";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { scale, verticalScale } from "react-native-size-matters";
+import { Line } from "../Profile/Profile";
 
 const settingList = [
   { id: 1, name: "View Channel Shows" },
@@ -54,7 +55,7 @@ const GeneralSettings = () => {
       />
       {/* settings */}
       <Spacer height={10} />
-      <Divider />
+      <Line elevation={5} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <PH45>
           {settingList.map((item) => (

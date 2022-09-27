@@ -10,183 +10,12 @@ import { Divider } from "react-native-elements";
 import icons from "../../../../../Assets/Icons";
 import { ScrollView } from "react-native-gesture-handler";
 
-const SearchList = () => {
-  const SearchLists = [
-    {
-      id: 1,
-      circle: (
-        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-      ),
-      MovieLogo: movies.nbc,
-      Moviename: "jophery",
-      Thumbnail: movies.movie1,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
-    },
-    {
-      id: 2,
-      circle: (
-        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-      ),
-      MovieLogo: movies.Netflix,
-      Moviename: "jpohery",
-      Thumbnail: movies.movie2,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
-    },
-    {
-      id: 3,
-      circle: (
-        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-      ),
-      MovieLogo: movies.disnep,
-      Moviename: "jpohery",
-      Thumbnail: movies.movie3,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
-    },
-    {
-      id: 4,
-      circle: (
-        <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-      ),
-      MovieLogo: movies.Netflix,
-      Moviename: "jpohery",
-      Thumbnail: movies.movie4,
-      leftArrow: (
-        <Feather
-          name={"arrow-up-left"}
-          color={colors.white}
-          height={50}
-          size={25}
-        />
-      ),
-    },
-    {
-        id: 4,
-        circle: (
-          <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-        ),
-        MovieLogo: movies.Netflix,
-        Moviename: "jpohery",
-        Thumbnail: movies.movie4,
-        leftArrow: (
-          <Feather
-            name={"arrow-up-left"}
-            color={colors.white}
-            height={50}
-            size={25}
-          />
-        ),
-      },
-      {
-        id: 4,
-        circle: (
-          <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-        ),
-        MovieLogo: movies.Netflix,
-        Moviename: "jpohery",
-        Thumbnail: movies.movie4,
-        leftArrow: (
-          <Feather
-            name={"arrow-up-left"}
-            color={colors.white}
-            height={50}
-            size={25}
-          />
-        ),
-      },
-      {
-        id: 4,
-        circle: (
-          <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-        ),
-        MovieLogo: movies.Netflix,
-        Moviename: "jpohery",
-        Thumbnail: movies.movie4,
-        leftArrow: (
-          <Feather
-            name={"arrow-up-left"}
-            color={colors.white}
-            height={50}
-            size={25}
-          />
-        ),
-      },
-      {
-        id: 4,
-        circle: (
-          <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-        ),
-        MovieLogo: movies.Netflix,
-        Moviename: "jpohery",
-        Thumbnail: movies.movie4,
-        leftArrow: (
-          <Feather
-            name={"arrow-up-left"}
-            color={colors.white}
-            height={50}
-            size={25}
-          />
-        ),
-      },
-      {
-        id: 4,
-        circle: (
-          <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-        ),
-        MovieLogo: movies.Netflix,
-        Moviename: "jpohery",
-        Thumbnail: movies.movie4,
-        leftArrow: (
-          <Feather
-            name={"arrow-up-left"}
-            color={colors.white}
-            height={50}
-            size={25}
-          />
-        ),
-      },
-      {
-        id: 4,
-        circle: (
-          <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
-        ),
-        MovieLogo: movies.Netflix,
-        Moviename: "jpohery",
-        Thumbnail: movies.movie4,
-        leftArrow: (
-          <Feather
-            name={"arrow-up-left"}
-            color={colors.white}
-            height={50}
-            size={25}
-          />
-        ),
-      },
-  ];
+const SearchList = ({search,setSearch,filerList}) => {
+  
   return (
     <ScrollView>
     <View >
-      {SearchLists.map((list, index) => (
+      {filerList.map((list, index) => (
         <Main>
           <View style={{ flex: 1.25, alignSelf: "center" }}>{list.circle}</View>
 
@@ -195,7 +24,7 @@ const SearchList = () => {
               <View style={{ flexDirection: "row", alignSelf: "center" }}>
                 <Image source={list.MovieLogo}  resizeMode={"contain"}  />
                 <CustomText
-                  label={list.Moviename}
+                  label={list.name}
                   fontSize={15}
                   color={colors.white}
                   marginLeft={10}

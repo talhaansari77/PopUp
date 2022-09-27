@@ -13,11 +13,13 @@ import BigThumbnail from "./BigThumbnail";
 import { Divider } from "react-native-elements/dist/divider/Divider";
 import { Spacer } from "../../../../Components/Spacer";
 import PlaylistItem from "./PlaylistItem";
+import { Line } from "../../Profile/Profile";
 
 const TopHome = () => {
   return (
     <Container>
       {/* <ScrollView> */}
+      <Line elevation={5} />
       <Banner />
       <ChannelStatus>
         <Center>
@@ -84,9 +86,9 @@ const TopHome = () => {
           />
           <Spacer height={10} />
 
-          {[1, 2, 3, 4, 5].map(() => (
+          {[1, 2, 3, 4, 5].map((item,index) => (
             <>
-              <PlaylistItem />
+              <PlaylistItem  key={index}/>
               <Spacer height={10} />
             </>
           ))}
@@ -98,6 +100,7 @@ const TopHome = () => {
 };
 
 export default TopHome;
+
 const Container = styled(View, {
   backgroundColor: colors.black,
   flex: 1,

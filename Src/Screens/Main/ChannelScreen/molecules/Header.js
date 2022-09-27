@@ -12,7 +12,7 @@ import { Spacer } from "../../../../Components/Spacer";
 const Header = () => {
   return (
     <View>
-        <Spacer height={20}/>
+        <Spacer height={30}/>
       <Row>
         <Row>
           <PH10>

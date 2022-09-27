@@ -85,8 +85,8 @@ const Profile = () => {
       <Line elevation={1} />
       <Spacer height={10} />
       <PH45>
-        {settingList.map((item) => (
-          <TouchableOpacity activeOpacity={0.7}>
+        {settingList.map((item,index) => (
+          <TouchableOpacity activeOpacity={0.7} key={index}>
             <PV10>
               <CustomText
                 label={item.name}
@@ -130,7 +130,7 @@ const ProfileImage = styled(TouchableOpacity, {
   // backgroundColor:colors.white
 });
 
-const Line = styled(View, (props)=>({
+export const Line = styled(View, (props)=>({
   height: 1,
   width: "100%",
   backgroundColor: colors.black,

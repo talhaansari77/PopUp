@@ -5,6 +5,7 @@ import { NavigationContainer,DefaultTheme } from "@react-navigation/native";
 import MainStack from "./MainStack";
 import SettingStack from "./SettingStack/SettingStack";
 import ChannelStack from "./ChannelStack";
+import { StatusBar } from 'expo-status-bar';
 
 const RootNavigator = () => {
   const MyTheme = {
@@ -28,6 +29,7 @@ const RootNavigator = () => {
         {/* <Stack.Screen name="ChannelStack" component={ChannelStack} />  */}
         {/* {/* <Stack.Screen name="Chat" component={Chat} /> */}
       </Stack.Navigator>
+      <StatusBar style="light" />
     </NavigationContainer>
   );
 };

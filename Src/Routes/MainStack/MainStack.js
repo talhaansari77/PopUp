@@ -21,11 +21,13 @@ const MainStack = () => {
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarShowLabel: false,
+        tabBarActiveTintColor: colors.white,
+        tabBarInactiveTintColor: colors.white,
+        
 
         tabBarStyle: {
-        backgroundColor: "#910C0D",
-        borderColor: "#910C0D",
-          // opacity: "0.9",
+          backgroundColor: colors.secondary,
+          borderColor: colors.secondary,
           height: verticalScale(60),
         },
         tabBarIcon: ({ focused, size, color }) => {
@@ -47,34 +49,32 @@ const MainStack = () => {
             size = focused ? 25 : 22;
             return (
               <BottomTabIcon>
-              <MaterialIcons
-                name={iconName}
-                size={moderateScale(size)}
-                color={color}
-              />
-              <CustomText label={route.name} color={colors.white}/>
-            </BottomTabIcon>
+                <MaterialIcons
+                  name={iconName}
+                  size={moderateScale(size)}
+                  color={color}
+                />
+                <CustomText label={route.name} color={colors.white} />
+              </BottomTabIcon>
             );
           }
 
           return (
             <BottomTabIcon>
-              <Feather name={iconName} size={moderateScale(size)} color={color} />
-              <CustomText label={route.name} color={colors.white}/>
+              <Feather
+                name={iconName}
+                size={moderateScale(size)}
+                color={color}
+              />
+              <CustomText label={route.name} color={colors.white} />
             </BottomTabIcon>
           );
         },
       })}
-      // activeColor="#f0edf6"
-      // inactiveColor="#3e2465"
-      // barStyle={{ padding:100 }}
-      tabBarOptions={{
-        activeTintColor: "#fff",
-        inactiveTintColor: "#fff",
-        // activeBackgroundColor: "#fff",
-        showIcon: true,
-        
-      }}
+      
+      
+
+      
       initialRouteName="ChannelScreen"
     >
       <Tab.Screen name="Home" component={Home} />
@@ -95,6 +95,7 @@ const MainStack = () => {
 
 export default MainStack;
 
-const BottomTabIcon=styled(View,{
-  justifyContent:"center", alignItems:"center"
-})
+const BottomTabIcon = styled(View, {
+  justifyContent: "center",
+  alignItems: "center",
+});
