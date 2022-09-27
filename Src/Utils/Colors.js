@@ -3,6 +3,7 @@ export const colors = {
   secondary: "#910C0D",
   // blue: "#5D03EC",
   link: "#3FAEFF",
+  lightWhite: "#EBEBF599",
   black: "#2A2D32",
   black2: "#2D2E31",
   pureBlack: "#000000",
@@ -20,5 +21,8 @@ export const colors = {
   blue: "blue",
   switchGray: "#E2E2E2",
   halfGray: "#9F9F9F",
+  // halfGray:"  #EBEBF5"
   // lightBlack:"#707070",
+
+
 };

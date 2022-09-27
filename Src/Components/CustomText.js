@@ -31,7 +31,7 @@ function CustomText(props) {
             fontWeight: props.fontWeight,
             fontStyle: props.fontStyle,
             textAlign: props.textAlign,
-            fontFamily: props.fontFamily,
+            fontFamily: props.fontFamily || "inter",
             numberOfLines: props.numberOfLines,
             ellipsizeMode: props.ellipsizeMode,
             marginVertical: verticalScale(props.marginVertical || 0),

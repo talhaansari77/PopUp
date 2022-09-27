@@ -10,41 +10,45 @@ import { Divider } from "react-native-elements";
 import icons from "../../../../../Assets/Icons";
 import { ScrollView } from "react-native-gesture-handler";
 
-const SearchList = ({search,setSearch,filerList}) => {
-  
+const SearchList = ({ search, setSearch, filerList }) => {
   return (
-    <ScrollView>
-    <View >
-      {filerList.map((list, index) => (
-        <Main>
-          <View style={{ flex: 1.25, alignSelf: "center" }}>{list.circle}</View>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View>
+        {filerList.map((list, index) => (
+          <Main>
+            <View style={{ flex: 1.25, alignSelf: "center" }}>
+              {list.circle}
+            </View>
 
-          <View style={{ flex: 8.25 }}>
-            <InnerMain>
-              <View style={{ flexDirection: "row", alignSelf: "center" }}>
-                <Image source={list.MovieLogo}  resizeMode={"contain"}  />
-                <CustomText
-                  label={list.name}
-                  fontSize={15}
-                  color={colors.white}
-                  marginLeft={10}
-                  fontWeight={"500"}
-                />
-              </View>
+            <View style={{ flex: 8.25 }}>
+              <InnerMain>
+                <View style={{ flexDirection: "row", alignSelf: "center" }}>
+                  <Image source={list.MovieLogo} resizeMode={"contain"} />
+                  <CustomText
+                    label={list.name}
+                    fontSize={15}
+                    color={colors.white}
+                    marginLeft={10}
+                    fontWeight={"500"}
+                  />
+                </View>
 
-              <View style={{ paddingTop: 4, marginBottom: 3,   }}>
-                <Image source={list.Thumbnail} style={{ height: 53, width: 85 }} />
-              </View>
-            </InnerMain>
-            <Shadow />
-          </View>
+                <View style={{ paddingTop: 4, marginBottom: 3 }}>
+                  <Image
+                    source={list.Thumbnail}
+                    style={{ height: 53, width: 85 }}
+                  />
+                </View>
+              </InnerMain>
+              <Shadow />
+            </View>
 
-          <View style={{ flex: 0.5, alignSelf: "center" }}>
-            {list.leftArrow}
-          </View>
-        </Main>
-      ))}
-    </View>
+            <View style={{ flex: 0.5, alignSelf: "center" }}>
+              {list.leftArrow}
+            </View>
+          </Main>
+        ))}
+      </View>
     </ScrollView>
   );
 };
@@ -56,10 +60,10 @@ const Main = styled(View, {
 });
 
 const InnerMain = styled(View, {
-    flexDirection: "row",
-    display: "flex",
-    justifyContent: "space-between",
-  });
+  flexDirection: "row",
+  display: "flex",
+  justifyContent: "space-between",
+});
 
 const Shadow = styled(View, {
   height: 1,

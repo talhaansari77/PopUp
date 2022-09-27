@@ -189,6 +189,7 @@ const SearchScreen = ({ navigation: { goBack } }) => {
   const [search, setSearch] = useState("");
   const [filerList, setFilerList] = useState(SearchLists);
   return (
+    <>
     <LinearGradient colors={["#2A2D32", "#221F1F"]} style={{ flex: 1 }}>
       <MainBody>
         <SafeAreaView>
@@ -245,6 +246,7 @@ const SearchScreen = ({ navigation: { goBack } }) => {
         />
       </View>
     </LinearGradient>
+    </>
   );
 };
 
