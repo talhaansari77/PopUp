@@ -28,36 +28,36 @@ const MainBody = () => {
             />
           </PaddingtoLeft>
           <Searching>
-          <LinearGradient
-            activeOpacity={0.6}
-            colors={[colors.primary, colors.lightBlack]}
-            padding={0.6}
-            paddingLeft={2.9}
-            paddingRight={2.9}
-            borderRadius={10}
-            // flexDirection={"row"}
-            start={{ x: 0, y: 0.5 }}
-            end={{ x: 1, y: 0.5 }}
-          >
-            <View>
-            <View style={{ alignItems: "center" }}>
-              <CustomTextInput
-                SelfAlign={"center"}
-                backgroundColor={colors.lightBlack}
-                borderWidth={1}
-                borderColor={colors.black}
-                width={"80%"}
-                height={63}
-                borderRadius={10}
-                placeholder={"Select your favoirte tv shows"}
-                placeholderTextColor={colors.gray}
-                color={colors.white}
-                keyboardType="numbers-and-punctuation"
-                search
-                mic
-              />
-            </View>
-            </View>
+            <LinearGradient
+              activeOpacity={0.6}
+              colors={[colors.primary, colors.lightBlack]}
+              padding={0.6}
+              paddingLeft={2.9}
+              paddingRight={2.9}
+              borderRadius={10}
+              // flexDirection={"row"}
+              start={{ x: 0, y: 0.5 }}
+              end={{ x: 1, y: 0.5 }}
+            >
+              <View>
+                <View style={{ alignItems: "center" }}>
+                  <CustomTextInput
+                    SelfAlign={"center"}
+                    backgroundColor={colors.lightBlack}
+                    borderWidth={1}
+                    borderColor={colors.black}
+                    width={"80%"}
+                    height={63}
+                    borderRadius={10}
+                    placeholder={"Select your favoirte tv shows"}
+                    placeholderTextColor={colors.gray}
+                    color={colors.white}
+                    keyboardType="numbers-and-punctuation"
+                    search
+                    mic
+                  />
+                </View>
+              </View>
             </LinearGradient>
 
             <SecondForm>

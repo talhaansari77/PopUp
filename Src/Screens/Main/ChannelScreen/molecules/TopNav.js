@@ -23,27 +23,33 @@ const TopNav = () => {
         },
         tabBarAllowFontScaling: true,
         
-        tabBarLabel: () => {
+        tabBarLabel: ({ focused, size, color}) => {
           let screenName='';
           if (route.name === "Home") {
             screenName='Home'
+            color = focused ? colors.white : colors.gray;
           } 
           else if (route.name === "AllVideos") {
             screenName='All Videos'
+            color = focused ? colors.white : colors.gray;
           }
           else if (route.name === "TvShow") {
             screenName='Tv Show'
+            color = focused ? colors.white : colors.gray;
           }
           else if (route.name === "Movie") {
             screenName='Movie'
+            color = focused ? colors.white : colors.gray;
           }
           else if (route.name === "Animation") {
             screenName='Animation'
+            color = focused ? colors.white : colors.gray;
           }
           else if (route.name === "Playlist") {
             screenName='Playlist'
+            color = focused ? colors.white : colors.gray;
           }
-          return <CustomText label={screenName} color={colors.white} />;
+          return <CustomText label={screenName} color={color} />;
         },
         tabBarLabelStyle: { fontSize: 12 },
         tabBarItemStyle: { width: 80 },
@@ -52,10 +58,7 @@ const TopNav = () => {
           backgroundColor: colors.white,
         },
       })}
-      tabBarOptions={{
-        activeTintColor: "#fff",
-        inactiveTintColor: "#fff",
-      }}
+      
     >
       <Tab.Screen name="Home" component={TopHome} />
       <Tab.Screen name="AllVideos" component={AllVideos} />

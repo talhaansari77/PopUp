@@ -14,7 +14,7 @@ const PlaylistItem = () => {
       <Image source={Channels.Thumbnail} style={thumbnailSize} />
       <Spacer width={10} />
       <Row>
-        <View style={{ width: "62%" }}>
+        <View style={{ width: "65%" }}>
           <Spacer height={2} />
           <CustomText
             label={"Never Have I Ever | Official Trailer| Netflix"}
