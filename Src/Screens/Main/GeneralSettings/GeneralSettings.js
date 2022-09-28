@@ -8,7 +8,7 @@ import { Divider } from "react-native-elements/dist/divider/Divider";
 import { colors } from "../../../Utils/Colors";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { scale, verticalScale } from "react-native-size-matters";
-import { Line } from "../Profile/Profile";
+
 
 const settingList = [
   { id: 1, name: "View Channel Shows" },
@@ -29,33 +29,46 @@ const settingList = [
   { id: 16, name: "About" },
 ];
 
-const GeneralSettings = () => {
+const GeneralSettings = ({navigation}) => {
   return (
     <Container>
-      <Spacer height={30} />
+      <Spacer height={40} />
       <ProfileNav
         LeftSide={() => (
           <Row>
             <PH10>
+              <TouchableOpacity 
+              activeOpacity={0.6}
+              onPress={()=>{
+                navigation.goBack()
+
+              }}
+              >
               <Ionicons
                 name="chevron-back-outline"
                 size={25}
                 color={colors.white}
               />
+
+              </TouchableOpacity>
+            
             </PH10>
             <CustomText
               label={"Settings"}
               color={colors.white}
-              fontSize={20}
+              fontSize={18}
               fontFamily={"inter"}
             />
-            <Divider color={colors.white} />
+
+            {/* <Divider color={colors.white} /> */}
           </Row>
         )}
       />
       {/* settings */}
       <Spacer height={10} />
-      <Line elevation={5} />
+      <Line elevation={2}  />
+
+      {/* <Divider /> */}
       <ScrollView showsVerticalScrollIndicator={false}>
         <PH45>
           {settingList.map((item) => (
@@ -96,3 +109,17 @@ const Row = styled(View, {
   alignItems: "center",
   justifyContent: "center",
 });
+const Line = styled(View, (props)=>({
+  height: 1,
+  width: "100%",
+  backgroundColor: colors.lightBlack,
+  shadowColor: "#E1E8F1",
+  shadowOffset: {
+    width: 0,
+    height: 1,
+  },
+  shadowOpacity: 0.5,
+  shadowRadius: 1,
+
+  elevation: props.elevation,
+}));

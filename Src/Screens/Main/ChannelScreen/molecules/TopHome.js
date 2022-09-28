@@ -20,79 +20,91 @@ const TopHome = () => {
     <Container>
       {/* <ScrollView> */}
       <Line elevation={5} />
-      <Banner />
-      <ChannelStatus>
-        <Center>
-          <CustomText
-            label={"10.5 M"}
-            color={colors.white}
-            fontFamily={"inter"}
-          />
-          <CustomText
-            label={"Subscribers"}
-            color={colors.white}
-            fontFamily={"inter"}
-          />
-        </Center>
-        <View>
-          <MainLogo>
-            <Image source={Channels.logo} />
-          </MainLogo>
-          <CustomGradientButton
-            title={"Subscribe"}
-            fontSize={14}
-            width={100}
-            height={35}
-            color1={"#B13025"}
-            color2={"#79281E"}
-          />
-        </View>
-        <Center>
-          <CustomText
-            label={"6.10 k"}
-            color={colors.white}
-            fontFamily={"inter"}
-          />
-          <CustomText
-            label={"Videos"}
-            color={colors.white}
-            fontFamily={"inter"}
-          />
-        </Center>
-      </ChannelStatus>
-      <ChannelDescription>
-        <CustomText
-          label={
-            "Netflix, Inc. is an American subscription streaming service and production company based in Los Gatos, California"
-          }
-          color={colors.white}
-          fontFamily={"inter"}
-          textAlign={"center"}
-          fontSize={8}
-        />
-        <Entypo name={"chevron-right"} color={colors.gray} size={16} />
-      </ChannelDescription>
-      <BigThumbnail />
-      <Divider color={colors.gray} />
-      <Spacer height={10} />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <Playlist>
-          <CustomText
-            label={"New in August 2022 | Netflix"}
-            color={colors.white}
-            fontFamily={"inter"}
-            fontWeight={"bold"}
-            fontSize={16}
-          />
-          <Spacer height={10} />
+      <ScrollView>
+        <Spacer height={2} />
 
-          {[1, 2, 3, 4, 5].map((item,index) => (
-            <>
-              <PlaylistItem  key={index}/>
-              <Spacer height={10} />
-            </>
-          ))}
-        </Playlist>
+        <Banner />
+
+        <ChannelStatus>
+          <Center>
+            <CustomText
+              label={"10.5 M"}
+              color={colors.white}
+              fontFamily={"inter"}
+            />
+            <CustomText
+              label={"Subscribers"}
+              color={colors.white}
+              fontFamily={"inter"}
+            />
+          </Center>
+          <View>
+            <MainLogo>
+              <Image source={Channels.logo} />
+            </MainLogo>
+            <CustomGradientButton
+              title={"Subscribe"}
+              fontSize={14}
+              width={100}
+              height={35}
+              color1={"#B13025"}
+              color2={"#79281E"}
+            />
+          </View>
+          <Center>
+            <CustomText
+              label={"6.10 k"}
+              color={colors.white}
+              fontFamily={"inter"}
+            />
+            <CustomText
+              label={"Videos"}
+              color={colors.white}
+              fontFamily={"inter"}
+            />
+          </Center>
+        </ChannelStatus>
+        <ChannelDescription>
+          <CustomText
+            label={
+              "Netflix, Inc. is an American subscription streaming service and production company based in Los Gatos, California"
+            }
+            color={colors.white}
+            fontFamily={"inter"}
+            textAlign={"center"}
+            fontSize={8}
+          ></CustomText>
+          <View
+            style={{
+              marginTop: verticalScale(10),
+              marginLeft: verticalScale(-20),
+            }}
+          >
+            <Entypo name={"chevron-right"} color={colors.gray1} size={16} />
+          </View>
+        </ChannelDescription>
+        <BigThumbnail />
+        <Divider color={colors.gray} />
+        <Spacer height={10} />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Playlist>
+            <CustomText
+              label={"New in August 2022 | Netflix"}
+              color={colors.white}
+              fontFamily={"inter"}
+              fontWeight={"bold"}
+              fontSize={16}
+            />
+            <Spacer height={10} />
+
+            {[1, 2, 3, 4, 5].map((item, index) => (
+              <>
+                <PlaylistItem key={index} />
+                <Spacer height={10} />
+              </>
+            ))}
+          </Playlist>
+        </ScrollView>
       </ScrollView>
       {/* </ScrollView> */}
     </Container>

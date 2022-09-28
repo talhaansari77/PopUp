@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text,Switch } from "react-native";
 import React, { useState } from "react";
 import CustomText from "../../../../Components/CustomText";
 import { colors } from "../../../../Utils/Colors";
@@ -43,11 +43,9 @@ const DaysContainer = () => {
     },
   ];
 
-  const [isOn, setisOn] = useState({
-    global: true,
-  });
+  const [isOn, setisOn] = useState(false);
 
-  const [count, setCount] = useState(-1);
+  const [count, setCount] = useState(1);
 
   const toggleSwitch = () => setisOn((previousState) => !previousState);
 
@@ -66,6 +64,7 @@ const DaysContainer = () => {
     <View>
       <Spacer height={10} />
       <MainPoriton>
+        
         <View style={{ alignSelf: "center" }}>
           <CustomText
             label={"Notification"}
@@ -76,10 +75,25 @@ const DaysContainer = () => {
           />
         </View>
         <View>
+          {/* <Switch 
+          style={{ transform: [{ scaleX: 1.3 }, { scaleY: 1.3}] }}
+          value={isOn}
+          onValueChange={toggleSwitch}
+          ios_backgroundColor={ isOn? colors.white:colors.primary}
+          thumbColor={isOn?colors.primary:colors.white}
+
+          trackColor={isOn?colors.primary:colors.white}
+          /> */}
+
           <ToggleSwitch
             isOn={isOn.global}
-            onColor={colors.primary}
-            offColor={colors.switchGray}
+            onColor={colors.switchGray}
+            offColor={colors.primary}
+            trackOnStyle={{color:colors.black}}
+            thumbOffStyle={colors.primary}
+            // thumbOffStyle={{color:colors.lightBlack}}
+            // labelStyle={{ color: "black", fontWeight: "900" }}
+
             
             // labelStyle={{ color: colors.red, fontWeight: "900" }}
             size="large"
@@ -89,6 +103,8 @@ const DaysContainer = () => {
           />
         </View>
       </MainPoriton>
+      <Spacer height={10}/>
+
       <View style={{ height: "30%" }}>
         <FlatList
           horizontal

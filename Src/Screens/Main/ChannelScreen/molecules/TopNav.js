@@ -22,50 +22,51 @@ const TopNav = () => {
           elevation: 0,
         },
         tabBarAllowFontScaling: true,
-        
-        tabBarLabel: ({ focused, size, color}) => {
-          let screenName='';
+
+        tabBarLabel: ({ focused, size, color }) => {
+          let screenName = "";
           if (route.name === "Home") {
-            screenName='Home'
+            screenName = "Home";
             color = focused ? colors.white : colors.gray;
-          } 
-          else if (route.name === "AllVideos") {
-            screenName='All Videos'
+          } else if (route.name === "AllVideos") {
+            screenName = "All Videos";
             color = focused ? colors.white : colors.gray;
-          }
-          else if (route.name === "TvShow") {
-            screenName='Tv Show'
+          } else if (route.name === "TvShow") {
+            screenName = "Tv Show";
             color = focused ? colors.white : colors.gray;
-          }
-          else if (route.name === "Movie") {
-            screenName='Movie'
+          } else if (route.name === "Movie") {
+            screenName = "Movie";
             color = focused ? colors.white : colors.gray;
-          }
-          else if (route.name === "Animation") {
-            screenName='Animation'
+          } else if (route.name === "Animation") {
+            screenName = "Animation";
             color = focused ? colors.white : colors.gray;
-          }
-          else if (route.name === "Playlist") {
-            screenName='Playlist'
+          } else if (route.name === "Playlist") {
+            screenName = "Playlist";
             color = focused ? colors.white : colors.gray;
           }
-          return <CustomText label={screenName} color={color} />;
+          return (
+            <CustomText
+              label={screenName}
+              color={color}
+              fontSize={11}
+              fontFamily="medium"
+            />
+          );
         },
         tabBarLabelStyle: { fontSize: 12 },
-        tabBarItemStyle: { width: 80 },
+        tabBarItemStyle: { width: 90 },
         tabBarScrollEnabled: true,
         tabBarIndicatorStyle: {
           backgroundColor: colors.white,
         },
       })}
-      
     >
       <Tab.Screen name="Home" component={TopHome} />
       <Tab.Screen name="AllVideos" component={AllVideos} />
-      <Tab.Screen name="TvShow" component={Profile} />
-      <Tab.Screen name="Movie" component={Profile} />
-      <Tab.Screen name="Animation" component={Profile} />
-      <Tab.Screen name="Playlist" component={Profile} />
+      <Tab.Screen name="TvShow" component={AllVideos} />
+      <Tab.Screen name="Movie" component={AllVideos} />
+      <Tab.Screen name="Animation" component={AllVideos} />
+      <Tab.Screen name="Playlist" component={AllVideos} />
     </Tab.Navigator>
   );
 };

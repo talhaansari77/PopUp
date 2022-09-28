@@ -64,7 +64,7 @@ const Container = styled(View, {
 const FilterTypeBox = styled(TouchableOpacity, {
   flexDirection: "row",
   backgroundColor: colors.lightBlack,
-  borderRadius: 100,
+  borderRadius: 99,
   padding: moderateScale(10),
   justifyContent: "center",
   alignItems: "center",

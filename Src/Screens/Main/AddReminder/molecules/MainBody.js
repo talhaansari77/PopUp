@@ -10,6 +10,7 @@ import Feather from "react-native-vector-icons/Feather";
 import { Spacer } from "../../../../Components/Spacer";
 import { verticalScale } from "react-native-size-matters";
 import DaysContainer from "./DaysContainer";
+import GradientForm from "./GradientForm";
 
 const MainBody = () => {
   return (
@@ -28,6 +29,7 @@ const MainBody = () => {
             />
           </PaddingtoLeft>
           <Searching>
+
             <LinearGradient
               activeOpacity={0.6}
               colors={[colors.primary, colors.lightBlack]}
@@ -60,6 +62,7 @@ const MainBody = () => {
               </View>
             </LinearGradient>
 
+
             <SecondForm>
               <View style={{ alignItems: "center" }}>
                 <FormUpperText>
@@ -70,23 +73,14 @@ const MainBody = () => {
                   />
                 </FormUpperText>
 
-                <CustomTextInput
-                  SelfAlign={"center"}
-                  backgroundColor={colors.lightBlack}
-                  // borderWidth={1}
-                  // borderColor={colors.primary}
-                  width={"42%"}
-                  height={63}
-                  borderRadius={10}
+                <GradientForm
+                  mainWidth={"85%"}
+                  inputWidth={"40%"}
                   placeholder={"Select"}
-                  placeholderTextColor={colors.gray}
-                  color={colors.white}
-                  keyboardType="numbers-and-punctuation"
                   playCircle
                   downArrow
                 />
               </View>
-
               <View style={{ alignItems: "center" }}>
                 <FormUpperText>
                   <CustomText
@@ -95,18 +89,10 @@ const MainBody = () => {
                     fontSize={12}
                   />
                 </FormUpperText>
-                <CustomTextInput
-                  SelfAlign={"center"}
-                  backgroundColor={colors.lightBlack}
-                  borderWidth={1}
-                  borderColor={colors.primary}
-                  width={"42%"}
-                  height={63}
-                  borderRadius={10}
+                <GradientForm
+                  mainWidth={"85%"}
+                  inputWidth={"40%"}
                   placeholder={"Select"}
-                  placeholderTextColor={colors.gray}
-                  color={colors.white}
-                  keyboardType="numbers-and-punctuation"
                   tv
                   downArrow
                 />
@@ -124,22 +110,14 @@ const MainBody = () => {
               />
             </PaddingtoLeft>
 
-            <CustomTextInput
-              SelfAlign={"center"}
-              backgroundColor={colors.lightBlack}
-              width={"100%"}
-              height={63}
-              borderRadius={10}
-              placeholder={"Select Date and Show time"}
-              placeholderTextColor={colors.gray}
-              color={colors.white}
-              keyboardType="numbers-and-punctuation"
-              borderWidth={1}
-              borderColor={colors.primary}
+            <GradientForm
+              mainWidth={"100%"}
+              inputWidth={"75%"}
+              placeholder={"Select Date and show time"}
+              keyboardType={"numbers-and-punctuation"}
               calendar
             />
           </Searching>
-
           <SecondForm>
             <View style={{ alignItems: "center" }}>
               <FormUpperText>
@@ -149,43 +127,27 @@ const MainBody = () => {
                   fontSize={12}
                 />
               </FormUpperText>
-              <CustomTextInput
-                SelfAlign={"center"}
-                backgroundColor={colors.lightBlack}
-                width={"42%"}
-                height={63}
-                borderRadius={10}
+              <GradientForm
+                  mainWidth={"85%"}
+                  inputWidth={"40%"}
                 placeholder={"Select"}
-                placeholderTextColor={colors.gray}
-                color={colors.white}
-                keyboardType="numbers-and-punctuation"
-                borderWidth={1}
-                borderColor={colors.primary}
                 calendarClock
                 downArrow
               />
             </View>
-
             <View style={{ alignItems: "center" }}>
               <FormUpperText>
                 <CustomText
                   label={"Finish"}
                   color={colors.white}
                   fontSize={12}
+                  fontWeight={"600"}
                 />
               </FormUpperText>
-              <CustomTextInput
-                SelfAlign={"center"}
-                backgroundColor={colors.lightBlack}
-                borderWidth={1}
-                borderColor={colors.primary}
-                width={"42%"}
-                height={63}
-                borderRadius={10}
+              <GradientForm
+                  mainWidth={"85%"}
+                  inputWidth={"40%"}
                 placeholder={"Select"}
-                placeholderTextColor={colors.gray}
-                color={colors.white}
-                keyboardType="numbers-and-punctuation"
                 calendarClock
                 downArrow
               />
@@ -227,7 +189,7 @@ const SecondForm = styled(View, {
 
 const FormUpperText = styled(View, {
   alignSelf: "flex-start",
-  paddingLeft: 35,
+  paddingLeft: 20,
   marginBottom: 8,
 });
 

@@ -1,4 +1,11 @@
-import { View, Text, SafeAreaView, Image } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  TouchableOpacity,
+  TextInput,
+  Image,
+} from "react-native";
 import React, { useState } from "react";
 import styled from "react-native-styled-components";
 import { Searchbar } from "react-native-paper";
@@ -9,7 +16,6 @@ import { colors } from "../../../Utils/Colors";
 import CustomTextInput from "../../../Components/CustomTextInput";
 import { LinearGradient } from "expo-linear-gradient";
 import SearchList from "./Molecules/SearchList";
-import { TextInput } from "react-native-gesture-handler";
 import icons from "../../../../Assets/Icons";
 import movies from "../../../../Assets/Movies";
 
@@ -38,7 +44,7 @@ const SearchScreen = ({ navigation: { goBack } }) => {
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
       MovieLogo: movies.Netflix,
-      name: "jpohery",
+      name: "Lock & key",
       Thumbnail: movies.movie2,
       leftArrow: (
         <Feather
@@ -55,7 +61,7 @@ const SearchScreen = ({ navigation: { goBack } }) => {
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
       MovieLogo: movies.disnep,
-      name: "jpohery",
+      name: "Money Heist",
       Thumbnail: movies.movie3,
       leftArrow: (
         <Feather
@@ -72,8 +78,8 @@ const SearchScreen = ({ navigation: { goBack } }) => {
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
       MovieLogo: movies.Netflix,
-      name: "jpohery",
-      Thumbnail: movies.movie4,
+      name: "Never Have I Ever",
+      Thumbnail: movies.movie1,
       leftArrow: (
         <Feather
           name={"arrow-up-left"}
@@ -89,8 +95,8 @@ const SearchScreen = ({ navigation: { goBack } }) => {
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
       MovieLogo: movies.Netflix,
-      name: "jpohery",
-      Thumbnail: movies.movie4,
+      name: "Moon Knight",
+      Thumbnail: movies.movie2,
       leftArrow: (
         <Feather
           name={"arrow-up-left"}
@@ -106,8 +112,8 @@ const SearchScreen = ({ navigation: { goBack } }) => {
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
       MovieLogo: movies.Netflix,
-      name: "jpohery",
-      Thumbnail: movies.movie4,
+      name: "Money Heist",
+      Thumbnail: movies.movie1,
       leftArrow: (
         <Feather
           name={"arrow-up-left"}
@@ -123,8 +129,8 @@ const SearchScreen = ({ navigation: { goBack } }) => {
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
       MovieLogo: movies.Netflix,
-      name: "jpohery",
-      Thumbnail: movies.movie4,
+      name: "Jeopardy",
+      Thumbnail: movies.movie3,
       leftArrow: (
         <Feather
           name={"arrow-up-left"}
@@ -140,8 +146,8 @@ const SearchScreen = ({ navigation: { goBack } }) => {
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
       MovieLogo: movies.Netflix,
-      name: "jpohery",
-      Thumbnail: movies.movie4,
+      name: "Lock & key",
+      Thumbnail: movies.movie3,
       leftArrow: (
         <Feather
           name={"arrow-up-left"}
@@ -157,8 +163,8 @@ const SearchScreen = ({ navigation: { goBack } }) => {
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
       MovieLogo: movies.Netflix,
-      name: "jpohery",
-      Thumbnail: movies.movie4,
+      name: "Money Heist",
+      Thumbnail: movies.movie1,
       leftArrow: (
         <Feather
           name={"arrow-up-left"}
@@ -174,8 +180,8 @@ const SearchScreen = ({ navigation: { goBack } }) => {
         <Image source={icons.RoundArrow} style={{ height: 22, width: 22 }} />
       ),
       MovieLogo: movies.Netflix,
-      name: "jpohery",
-      Thumbnail: movies.movie4,
+      name: "Never Have I Ever",
+      Thumbnail: movies.movie3,
       leftArrow: (
         <Feather
           name={"arrow-up-left"}
@@ -186,66 +192,69 @@ const SearchScreen = ({ navigation: { goBack } }) => {
       ),
     },
   ];
+  
   const [search, setSearch] = useState("");
   const [filerList, setFilerList] = useState(SearchLists);
   return (
     <>
-    <LinearGradient colors={["#2A2D32", "#221F1F"]} style={{ flex: 1 }}>
-      <MainBody>
-        <SafeAreaView>
-          <Searching>
-            <View>
-              <AntDesign
-                name="left"
-                color={colors.white}
-                size={22}
-                onPress={() => goBack()}
-              />
-            </View>
-            <View style={{ alignItems: "center" }}>
-              <CustomTextInput
-                SelfAlign={"center"}
-                backgroundColor={colors.lightBlack}
-                borderColor={colors.lightBlack}
-                width={"95%"}
-                height={50}
-                borderRadius={10}
-                placeholder={"Search Your Show"}
-                placeholderTextColor={colors.gray}
-                color={colors.white}
-                keyboardType="numbers-and-punctuation"
-                onChangeText={(txt) => {
-                  let data =SearchLists.filter((item) => item.name.includes(txt)?item:'');
-                  setFilerList(data);
-                  console.log(data);
+      <LinearGradient colors={["#2A2D32", "#221F1F"]} style={{ flex: 1 }}>
+        <MainBody>
+          <SafeAreaView>
+            <Searching>
+              <TouchableOpacity
+                style={{ marginRight: 5 }}
+                onPress={() => {
+                  navigation.goBack();
                 }}
-              />
-            </View>
+              >
+                <AntDesign
+                  name="left"
+                  color={colors.white}
+                  size={20}
+                  onPress={() => goBack()}
+                />
+              </TouchableOpacity>
 
-            <Mic>
-              <Feather
-                name={"mic"}
-                color={colors.white}
-                height={50}
-                size={25}
-              />
-            </Mic>
-          </Searching>
-          <SearchList
-            search={search}
-            setSearch={setSearch}
-            // SearchLists={SearchLists}
-            filerList={filerList}
+              <View style={{ alignItems: "center" }}>
+                <CustomTextInput
+                  SelfAlign={"center"}
+                  backgroundColor={colors.lightBlack}
+                  borderColor={colors.lightBlack}
+                  width={"92%"}
+                  height={43}
+                  borderRadius={8}
+                  placeholder={"Search Your Show"}
+                  placeholderTextColor={colors.gray}
+                  color={colors.white}
+                  keyboardType="numbers-and-punctuation"
+                  onChangeText={(txt) => {
+                    let data = SearchLists.filter((item) =>
+                      item.name.includes(txt) ? item : ""
+                    );
+                    setFilerList(data);
+                    console.log(data);
+                  }}
+                />
+              </View>
+              <Mic>
+                <Feather name={"mic"} color={colors.white} size={22} />
+              </Mic>
+            </Searching>
+            <SearchList
+              search={search}
+              setSearch={setSearch}
+              // SearchLists={SearchLists}
+              filerList={filerList}
+            />
+          </SafeAreaView>
+        </MainBody>
+        <View>
+          <TextInput
+            style={{ height: 40, margin: 12 }}
+            keyboardType="numbers-and-punctuation"
           />
-        </SafeAreaView>
-      </MainBody>
-      <View>
-        <TextInput
-          style={{ height: 40, margin: 12 }}
-          keyboardType="numbers-and-punctuation"
-        />
-      </View>
-    </LinearGradient>
+        </View>
+      </LinearGradient>
     </>
   );
 };
@@ -262,6 +271,7 @@ const Mic = styled(View, {
   borderRadius: 50,
   height: 40,
   width: 40,
+  marginLeft: verticalScale(5),
   justifyContent: "center",
   alignItems: "center",
 });

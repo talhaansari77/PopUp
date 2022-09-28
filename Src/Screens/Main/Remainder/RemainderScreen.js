@@ -6,9 +6,11 @@ import {
   Platform,
   ScrollView,
   FlatList,
+  Image,
 } from "react-native";
 import React, { useState } from "react";
 import { colors } from "../../../Utils/Colors";
+import CustomGradientButton from "../../../Components/CustomGradientButton";
 
 import { moderateScale, verticalScale } from "react-native-size-matters";
 import CustomText from "../../../Components/CustomText";
@@ -20,6 +22,8 @@ import SelectChannel from "./Molecules/SelectChannel";
 import movies from "../../../../Assets/Movies";
 import MoviesContainer from "./Molecules/MoviesContainer";
 import styled from "react-native-styled-components";
+import { BlurView } from "expo-blur";
+import commonStyles from "../../../Utils/CommonStyles";
 
 const daysData = [
   { id: 1, txt1: "Mon", txt2: "22" },
@@ -37,23 +41,76 @@ const selectData = [
   { id: 4, name: "BBC News" },
 ];
 
-const MoviesData=[
-    { id: 1, startTime: "10:00" ,endTime:"11am",moviesImg:movies.remainderMov1,title:"The Witcher",season:"Season 2,Ep- 10",des:"The witcher Geralt, a mutated monster hunter struggles to find his." },
-    { id: 2, startTime: "10:00" ,endTime:"11am",moviesImg:movies.remainderMov1,title:"Sherlock",season:"Season 2,Ep- 10",des:"The witcher Geralt, a mutated monster hunter struggles to find his." },
-    { id: 3, startTime: "10:00" ,endTime:"11am",moviesImg:movies.remainderMov1,title:"The Witcher",season:"Season 2,Ep- 10",des:"The witcher Geralt, a mutated monster hunter struggles to find his." },
-    { id: 4, startTime: "10:00" ,endTime:"11am",moviesImg:movies.remainderMov1,title:"The Witcher",season:"Season 2,Ep- 10",des:"The witcher Geralt, a mutated monster hunter struggles to find his." },
-    { id: 5, startTime: "10:00" ,endTime:"11am",moviesImg:movies.remainderMov1,title:"The Witcher",season:"Season 2,Ep- 10",des:"The witcher Geralt, a mutated monster hunter struggles to find his." },
-    { id: 6, startTime: "10:00" ,endTime:"11am",moviesImg:movies.remainderMov1,title:"The Witcher",season:"Season 2,Ep- 10",des:"The witcher Geralt, a mutated monster hunter struggles to find his." },
-    { id: 7, startTime: "10:00" ,endTime:"11am",moviesImg:movies.remainderMov1,title:"The Witcher",season:"Season 2,Ep- 10",des:"The witcher Geralt, a mutated monster hunter struggles to find his." },
-
-
-
-]
+const MoviesData = [
+  {
+    id: 1,
+    startTime: "10:00",
+    endTime: "11am",
+    moviesImg: movies.remainderMov1,
+    title: "The Witcher",
+    season: "Season 2,Ep- 10",
+    des: "The witcher Geralt, a mutated monster hunter struggles to find his.",
+  },
+  {
+    id: 2,
+    startTime: "10:00",
+    endTime: "11am",
+    moviesImg: movies.remainderMov1,
+    title: "Sherlock",
+    season: "Season 2,Ep- 10",
+    des: "The witcher Geralt, a mutated monster hunter struggles to find his.",
+  },
+  {
+    id: 3,
+    startTime: "10:00",
+    endTime: "11am",
+    moviesImg: movies.remainderMov1,
+    title: "The Witcher",
+    season: "Season 2,Ep- 10",
+    des: "The witcher Geralt, a mutated monster hunter struggles to find his.",
+  },
+  {
+    id: 4,
+    startTime: "10:00",
+    endTime: "11am",
+    moviesImg: movies.remainderMov1,
+    title: "The Witcher",
+    season: "Season 2,Ep- 10",
+    des: "The witcher Geralt, a mutated monster hunter struggles to find his.",
+  },
+  {
+    id: 5,
+    startTime: "10:00",
+    endTime: "11am",
+    moviesImg: movies.remainderMov1,
+    title: "The Witcher",
+    season: "Season 2,Ep- 10",
+    des: "The witcher Geralt, a mutated monster hunter struggles to find his.",
+  },
+  {
+    id: 6,
+    startTime: "10:00",
+    endTime: "11am",
+    moviesImg: movies.remainderMov1,
+    title: "The Witcher",
+    season: "Season 2,Ep- 10",
+    des: "The witcher Geralt, a mutated monster hunter struggles to find his.",
+  },
+  {
+    id: 7,
+    startTime: "10:00",
+    endTime: "11am",
+    moviesImg: movies.remainderMov1,
+    title: "The Witcher",
+    season: "Season 2,Ep- 10",
+    des: "The witcher Geralt, a mutated monster hunter struggles to find his.",
+  },
+];
 
 const RemainderScreen = ({ navigation }) => {
   const [count, setCount] = useState(-1);
   const [channelCount, setChannelCount] = useState(1);
-  const [checkBox, setcheckBox] = useState(-1)
+  const [checkBox, setcheckBox] = useState(-1);
 
   const DaysRender = ({ item, index }) => {
     return (
@@ -67,27 +124,27 @@ const RemainderScreen = ({ navigation }) => {
     );
   };
   const ChannelRender = ({ item, index }) => {
+
+    console.log("textLength", item.name.length)
     return (
       <SelectChannel
         key={item.id}
         setCount={setChannelCount}
         item={item}
+        textLength={item.name.length}
+
         count={channelCount}
         name={item.name}
-        // signalList={signalList}
-        // setSignalTabsData={setSignalTabsData}
-        // onPress={()=>console.log('first')}
+   
       />
     );
   };
 
-  const MoviesRender=({item,index})=>{
-      console.log("itemImg",item)
+  const MoviesRender = ({ item, index }) => {
+    console.log("itemImg", item);
     return (
-
-
-        <MoviesContainer
-         key={item.id}
+      <MoviesContainer
+        key={item.id}
         season={item.season}
         title={item.title}
         des={item.des}
@@ -96,17 +153,14 @@ const RemainderScreen = ({ navigation }) => {
         endTime={item.endTime}
         moviesImg={item.moviesImg}
         checkBox={checkBox}
-         setcheckBox={setcheckBox}
-        />
-
-      );
-
-
-  }
+        setcheckBox={setcheckBox}
+      />
+    );
+  };
 
   return (
-    <SafeAreaView style={styles.mainContainer}>
-      <View style={styles.child}>
+    <View style={styles.mainContainer}>
+      <View >
         <TopHeader
           onPress={() => {
             navigation.goBack();
@@ -133,18 +187,47 @@ const RemainderScreen = ({ navigation }) => {
           keyExtractor={(item) => item.id}
           renderItem={ChannelRender}
         />
-        <Line elevation={2}/>
-        
+        <Line elevation={2} />
       </View>
 
       <FlatList
-          data={MoviesData}
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={(item) => item.id}
-          renderItem={MoviesRender}
-        />
+        data={MoviesData}
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={(item) => item.id}
+        renderItem={MoviesRender}
+      />
+      <View
+        style={{
+          width: "100%",
+          height: verticalScale(80),
+          position: "absolute",
+          backgroundColor:'rgba(52, 52, 52, 0.8)',
+          bottom: 0,
+          alignItems:"center",
+          paddingTop:verticalScale(10),
+        
+          // opacity: 0.3,
+        }}
+      >
 
-    </SafeAreaView>
+          <CustomGradientButton
+          onPress={()=>{
+            navigation.navigate("AddReminder")
+            
+
+          }}
+            title={"Add New Show"}
+            fontSize={20}
+            width="90%"
+            borderRadius={30}
+            height={50}
+            color1={"#B13025"}
+            color2={"#79281E"}
+          />
+     
+
+      </View>
+    </View>
   );
 };
 
@@ -154,26 +237,34 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: colors.black,
+    paddingTop:Platform.OS=="ios"?10:null
   },
   showConatiner: {
     flexDirection: "row",
     width: "100%",
   },
   selContainer: {
-    height: "5%",
+    height: "3%",
+  },
+  absolute: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   },
 });
-const Line = styled(View, (props)=>({
+const Line = styled(View, (props) => ({
+  height: 1,
+  width: "100%",
+  backgroundColor: colors.black,
+  shadowColor: "#E1E8F1",
+  shadowOffset: {
+    width: 0,
     height: 1,
-    width: "100%",
-    backgroundColor: colors.black,
-    shadowColor: "#E1E8F1",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.9,
-    shadowRadius: 3,
-  
-    elevation: props.elevation,
-  }));
+  },
+  shadowOpacity: 0.9,
+  shadowRadius: 3,
+
+  elevation: props.elevation,
+}));

@@ -28,7 +28,7 @@ function CustomText(props) {
             marginRight: scale(props.marginRight || 0),
             marginBottom: scale(props.marginBottom || 0),
             alignSelf: props.alignSelf || "flex-start",
-            fontWeight: props.fontWeight,
+            fontWeight: props.fontWeight || "500",
             fontStyle: props.fontStyle,
             textAlign: props.textAlign,
             fontFamily: props.fontFamily || "inter",

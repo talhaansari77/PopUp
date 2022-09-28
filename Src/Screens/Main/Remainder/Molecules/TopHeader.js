@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingTop: Platform.OS == "ios" ? 30 : 50,
+    paddingTop: Platform.OS == "ios" ? 40 : 50,
     marginLeft: verticalScale(10),
     marginRight: verticalScale(20),
   },

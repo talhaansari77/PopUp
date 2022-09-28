@@ -6,6 +6,7 @@ import { scale, verticalScale } from "react-native-size-matters";
 import CustomText from "../../../../Components/CustomText";
 import { colors } from "../../../../Utils/Colors";
 import { Spacer } from "../../../../Components/Spacer";
+import commonStyles from "../../../../Utils/CommonStyles";
 
 const BigThumbnail = () => {
   return (
@@ -15,7 +16,7 @@ const BigThumbnail = () => {
         <ChannelIcon>
           <Image source={Channels.logo} resizeMode="contain" />
         </ChannelIcon>
-        <Spacer width={10}/>
+        <Spacer width={10} />
         <View>
           <CustomText
             label={"Lock & Key: Season 3 | Official Trailer | Netflix"}
@@ -39,9 +40,9 @@ export default BigThumbnail;
 const VideoDetail = styled(View, {
   paddingHorizontal: scale(20),
   paddingVertical: verticalScale(5),
-  flexDirection:"row",
+  flexDirection: "row",
   alignItems: "center",
-//   justifyContent: "space-between",
+  //   justifyContent: "space-between",
 });
 const ChannelIcon = styled(View, {
   height: 40,
@@ -52,4 +53,5 @@ const ChannelIcon = styled(View, {
 });
 const h153 = {
   height: 153,
+  width: "100%",
 };

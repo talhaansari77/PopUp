@@ -25,11 +25,11 @@ const TopBar = () => {
           />
           {/* <Image source={icons.PopUp} size={33} /> */}
 
-          <View style={{ alignItems: "center", marginTop: 10 }}>
+          <View style={{ alignItems: "center", marginTop: 15 }}>
             <CustomText
               label={"Pop up Tv"}
               fontFamily={"lovers"}
-              fontSize={25}
+              fontSize={22}
               marginBottom={-9}
               color={colors.white}
             />
@@ -47,27 +47,32 @@ const TopBar = () => {
           <Feather
             name={"bell"}
             color={colors.white}
-            size={30}
+            size={25}
             onPress={() =>
               navigation.navigate("RemainderStack", { screen: "Remainder" })
             }
           />
-          <Feather name={"cast"} color={colors.white} size={30} />
+          <Feather name={"cast"} color={colors.white} size={25}
+             onPress={() =>
+              navigation.navigate("RemainderStack", { screen: "Remainder" })
+            }
+           />
           <Feather
             name={"search"}
             color={colors.white}
-            size={30}
-            // onPress={() =>
-            //   navigation.navigate("SettingStack", { screen: "SearchScreen" })
-            // }
+            size={25}
+
+            onPress={() =>
+              navigation.navigate("SettingStack", { screen: "SearchScreen" })
+            }
           />
           <Feather
             name={"grid"}
             color={colors.white}
-            size={30}
-            // onPress={() =>
-            //   navigation.navigate("SettingStack", { screen: "GeneralSetting" })
-            // }
+            size={25}
+            onPress={() =>
+              navigation.navigate("SettingStack", { screen: "GeneralSettings" })
+            }
           />
         </RightTopBar>
       </Main>

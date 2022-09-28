@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View,TouchableOpacity, Platform } from 'react-native'
 import React from 'react'
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Feather from "react-native-vector-icons/Feather";
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginLeft: verticalScale(20),
         marginRight: verticalScale(20),
+        marginTop: Platform.OS=="ios"? verticalScale(10):null
       },
 
 })

@@ -54,8 +54,7 @@ const CustomTextInput = ({
             backgroundColor: props.backgroundColor,
             marginTop: props.marginTop || verticalScale(0),
             flexDirection: "row",
-            borderColor: props.borderColor || colors.primary,
-            borderWidth: 1.3,
+            borderColor: props.borderColor ,
             alignItems: "center",
             paddingLeft: props.paddingLeft,
           },
@@ -90,14 +89,20 @@ const CustomTextInput = ({
                 // }
               />
             </View>
-            <View
-              style={{
-                backgroundColor: colors.lightWhite,
-                height: verticalScale(36),
-                width: scale(2),
-                marginLeft: 10,
-              }}
-            ></View>
+            {
+              props.line?(
+                <View
+                style={{
+                  backgroundColor: colors.lightWhite,
+                  height: verticalScale(36),
+                  width: scale(1.5),
+                  marginLeft: 10,
+                }}
+              ></View>
+
+              ):<></>
+            }
+         
           </View>
         ) : props.calendar ? (
           <View style={{ display: "flex", flexDirection: "row" }}>
@@ -230,12 +235,13 @@ const CustomTextInput = ({
         <TextInput
           style={[
             {
-              width: props.inputWidth || password ? "88%" : "95%",
+              width:  password || eyeClick||props.mic || props.downArrow? props.inputWidth  : "95%",
               height: props.inputHeight || "100%",
               marginLeft: props.inputLeftMargin || 10,
               paddingRight: props.paddingRight || 10,
               paddingHorizontal: props.paddingHorizontal,
               fontFamily: "bold",
+              color:colors.white,
               fontSize: verticalScale(13),
             },
           ]}
